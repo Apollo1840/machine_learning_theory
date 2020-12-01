@@ -14,7 +14,7 @@
 - (might not good) Sample the marjority to relief label imbalance.
 
 ## Improve with Feature engineering
-总结：增加或优化特征, 对多个特征进行非线性变换。
+总结：增加或优化特征, 对多个特征进行选择或非线性变换。
 
 Single feature: 
 
