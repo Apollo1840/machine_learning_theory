@@ -25,6 +25,10 @@ J(\theta) = \mathbb{E}_{\theta}
 $$
 
 $$
+J(\theta) = \mathbb{E}_{\pi_\theta}
+$$
+
+$$
 J(\theta) = \mathbb{E}_{\pi_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
