@@ -23,7 +23,7 @@ where $r_t$ is the reward at time step $t$, and $\gamma$ is the discount factor.
 The gradient of $J(𝜃)$ with respect to $𝜃$ is:
 
 $$
-\nabla_{𝜃} J(𝜃) = \mathbb{E}_{\pi_{𝜃}} \left[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \right]
+\nabla_{𝜃} J(𝜃) = \mathbb{E}_{\pi_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
 $$
 
 where $G_t$ is the cumulative reward (return) from time $t$.
@@ -39,7 +39,7 @@ where $\alpha$ is the learning rate.
 Note: the expected value needs to be estimated. 
 
 
-## Estimate the gradient::
+## Estimate the gradient:
 
 ### 1. REINFORCE Algorithm:
 
@@ -55,8 +55,6 @@ as well as $\pi_{𝜃}(a_t \mid s_t)$:
 $$
  \{(S_t, A_t, R_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
 $$
-
----
 
 ### 2. Actor-Critic Methods:
 
