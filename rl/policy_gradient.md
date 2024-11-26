@@ -65,7 +65,7 @@ For each episode, we will record the whole episode and calculate the discounted 
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
 
 $$
- \{(s_t, a_t, r_t)\} \Rightarrow \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
+ \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), G_t) \}
 $$
 
 ### 2. Actor-Critic Methods:
@@ -79,15 +79,23 @@ $$
 $$
 
 Since
+
 $$
-Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
+${\sigma}\_t$ = Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
 $$
 
-We will only need to find a proper estimate of $V$ as $V_phi$.
+We will only need to find a proper estimate of $V$ as $V_{phi}$.
 
 Loss of $V_\phi$:
 
 $$
 \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
+$$
+
+For each episode, we will record the whole episode and calculate the discounted rewards (${\sigma}\_t$) for each $t$,
+as well as $\pi_{𝜃}(a_t \mid s_t)$:
+
+$$
+ \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\sigma}\_t) \}
 $$
 
