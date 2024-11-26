@@ -20,9 +20,7 @@ $$
 \sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... 
 $$
 
-
 - $r_t$: reward at time step $t$.
-- $T$: episode end time.
 - $\gamma$: discount factor.
 
 
