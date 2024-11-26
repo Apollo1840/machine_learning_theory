@@ -25,6 +25,14 @@ J(\theta) = \mathbb{E}_{\theta}
 $$
 
 $$
+J(\theta) = \mathbb{E}_{\pi}
+$$
+
+$$
+\pi_\theta
+$$
+
+$$
 J(\theta) = \mathbb{E}_{\pi_\theta}
 $$
 
