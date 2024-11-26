@@ -93,13 +93,13 @@ We will only need to find a proper estimate of $V$ as $V_{\phi}$.
 Loss of $V_\phi$:
 
 $$
-\left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
+{{\delta}\_{t \| \phi}}^2 = \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
 $$
 
 For each episode, we will record the whole episode and calculate the discounted rewards (${\delta}\_t$) for each $t$,
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
 
 $$
- \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t) \}
+ \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t), {{\delta}\_{t \| \phi}}^2 \}
 $$
 
