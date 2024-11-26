@@ -29,6 +29,10 @@ $$
 Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $𝜃$ is:
 
 $$
+G_t = \sum_{i=t}^\infty \gamma^i r_i
+$$
+
+$$
 \nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
 $$
 
@@ -57,10 +61,6 @@ $$
 
 For each episode, we will record the whole episode and calculate the discounted rewards ($G_t$) for each $t$,
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
-
-$$
-G_t = \sum_{i=t}^\infty \gamma^i r_i
-$$
 
 $$
  \{(s_t, a_t, r_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
