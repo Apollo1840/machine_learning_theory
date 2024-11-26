@@ -1,5 +1,7 @@
 # Policy Gradient
 
+reference: https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
+
 ## Key concepts:
 
 def. Episode: a series of (state, action, reward).
