@@ -12,11 +12,11 @@ def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a
 The goal is to maximize the **expected cumulative reward** $J(𝜃)$, defined as:
 
 $$
-G_t = \sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... + \gamma^T r_T
+\sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... + \gamma^T r_T
 $$
 
 $$
-J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ G_t \]
+J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
 - $r_t$: reward at time step $t$.
@@ -57,6 +57,10 @@ $$
 
 For each episode, we will record the whole episode and calculate the discounted rewards ($G_t$) for each $t$,
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
+
+$$
+G_t = \sum_{i=t}^\infty \gamma^i r_i
+$$
 
 $$
  \{(s_t, a_t, r_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
