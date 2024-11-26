@@ -12,7 +12,7 @@ def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a
 The goal is to maximize the **expected cumulative reward** $J(𝜃)$, defined as:
 
 $$
-J(\theta) = \mathbb{E}_{\pi_\theta} [ \sum_{t=0}^\infty \gamma^t r_t ]
+J(\theta) = \mathbb{E}_{\pi_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
 
