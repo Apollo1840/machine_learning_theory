@@ -81,7 +81,11 @@ $$
 Since
 
 $$
-{\delta}\_t = Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
+ Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
+$$
+
+$$
+{\delta}\_t = A(s_t, a_t) = r_t + \gamma V(s_{t+1}) - V(s_{t})
 $$
 
 We will only need to find a proper estimate of $V$ as $V_{phi}$.
