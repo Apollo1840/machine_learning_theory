@@ -6,7 +6,7 @@ It does not include many implementation details and instead focuses more on math
 
 This is a highly advanced book that strives to be as deep as possible, but it does so at the expense of details, implementation methods, and breadth of subtopics within subfields.
 
-## subjects
+## Subjects
 
 - (ML) Traditional Machine Learning Theories
 - (DL) Deep Learning and Neural Network Basics
@@ -26,10 +26,12 @@ This is a highly advanced book that strives to be as deep as possible, but it do
 - Multi-modal Techniques
 - AI simulation
 - (LLM) Large Language Models
+  - Theory
+  - Prompt engineering
+  - RAG
 - (GenAI) Generative AI
     - Image Generation
     - Chatbots
     - Multi-modal cross application
 - AI Agents
 - (EAI) Embodied Intelligence
-
