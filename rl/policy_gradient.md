@@ -21,7 +21,7 @@ $$
 
 
 $$
-J(\theta) = \mathbb{E}_{\pi_\theta}
+J(\theta) = \mathbb{E}_{\theta}
 $$
 
 $$
