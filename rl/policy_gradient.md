@@ -12,6 +12,8 @@ def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a
 The goal is to maximize the **expected cumulative reward** $J(𝜃)$, defined as:
 
 $$
+G_t = \sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... + \gamma^t r_t
+
 J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
@@ -21,7 +23,7 @@ $$
 
 ## Update Rule:
 
-The gradient of $J(𝜃)$ with respect to $𝜃$ is:
+Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $𝜃$ is:
 
 $$
 \nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
@@ -59,10 +61,11 @@ $$
 
 ### 2. Actor-Critic Methods:
 
-Combines policy gradients (actor) with value-based methods (critic). The critic estimates a value function (e.g., $V(s)$), which reduces the variance of the gradient estimate.
+Combines policy gradients (actor) with value-based methods (critic). The critic estimates a value function (e.g., $V(s)$ ), which reduces the variance of the gradient estimate.
 
-Introduces the advantage function $A(s, a) = Q(s, a) - V(s)$ to improve stability:
+Introduces the advantage function $A_\theta(s, a) = Q_\theta(s, a) - V_\theta(s)$ to improve stability:
 
 $$
-\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)
+\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A_\theta(s, a)
 $$
+
