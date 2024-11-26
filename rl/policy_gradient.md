@@ -100,6 +100,6 @@ For each episode, we will record the whole episode and calculate the discounted 
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
 
 $$
- \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t), {{\delta}\_{t \| \phi}}^2 \}
+ \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t, {{\delta}\_{t \| \phi}}^2 \})
 $$
 
