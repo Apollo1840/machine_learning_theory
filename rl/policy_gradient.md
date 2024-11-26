@@ -17,7 +17,7 @@ J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
 $$
-\sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... + \gamma^T r_T
+\sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... 
 $$
 
 
@@ -37,7 +37,7 @@ $$
 
 
 $$
-G_t = \sum_{i=t}^\infty \gamma^i r_i = r_t + \gamma^{t+1} r_{t+1} + \gamma^{t+2} r_{t+2} + ... + \gamma^T r_T
+G_t = \sum_{i=t}^\infty \gamma^i r_i = r_t + \gamma^{t+1} r_{t+1} + \gamma^{t+2} r_{t+2} + ... 
 $$
 
 - $G_t$: the cumulative reward (return) from time $t$.
