@@ -15,7 +15,8 @@ $$
 J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
 $$
 
-where $r_t$ is the reward at time step $t$, and $\gamma$ is the discount factor.
+- $r_t$: reward at time step $t$.
+- $\gamma$: discount factor.
 
 
 ## Update Rule:
@@ -26,7 +27,7 @@ $$
 \nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
 $$
 
-where $G_t$ is the cumulative reward (return) from time $t$.
+- $G_t$: the cumulative reward (return) from time $t$.
 
 Parameters are updated using gradient ascent:
 
@@ -34,9 +35,9 @@ $$
 𝜃 \gets 𝜃 + \alpha \nabla_{𝜃} J(𝜃)
 $$
 
-where $\alpha$ is the learning rate.
+- $\alpha$: learning rate.
 
-Note: the expected value needs to be estimated. 
+Note: the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated. 
 
 
 ## Estimate the gradient:
@@ -53,7 +54,7 @@ For each episode, we will record the whole episode and calculate the discounted 
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
 
 $$
- \{(S_t, A_t, R_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
+ \{(s_t, a_t, r_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
 $$
 
 ### 2. Actor-Critic Methods:
