@@ -72,9 +72,22 @@ $$
 
 Combines policy gradients (actor) with value-based methods (critic). The critic estimates a value function (e.g., $V(s)$ ), which reduces the variance of the gradient estimate.
 
-Introduces the advantage function $A_\theta(s, a) = Q_\theta(s, a) - V_\theta(s)$ to improve stability:
+Introduces the advantage function $A(s, a) = Q(s, a) - V(s)$ to improve stability:
 
 $$
-\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A_\theta(s, a)
+\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)
+$$
+
+Since
+$$
+Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
+$$
+
+We will only need to find a proper estimate of $V$ as $V_phi$.
+
+Loss of $V_\phi$:
+
+$$
+\left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
 $$
 
