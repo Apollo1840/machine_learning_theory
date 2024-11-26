@@ -16,6 +16,11 @@ J(\theta) =
 $$
 
 $$
+J(\theta) = \mathbb{E}
+$$
+
+
+$$
 J(\theta) = \mathbb{E}_{\pi_\theta}
 $$
 
