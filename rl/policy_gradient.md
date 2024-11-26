@@ -23,7 +23,7 @@ where $r_t$ is the reward at time step $t$, and $\gamma$ is the discount factor.
 The gradient of $J(𝜃)$ with respect to $𝜃$ is:
 
 $$
-\nabla_{𝜃} J(𝜃) = \mathbb{E}_{\pi_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
+\nabla_{𝜃} J(𝜃) = \mathbb{E}_{\pi_{𝜃}} \left[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \right]
 $$
 
 where $G_t$ is the cumulative reward (return) from time $t$.
