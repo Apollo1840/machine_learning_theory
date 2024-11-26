@@ -65,7 +65,7 @@ For each episode, we will record the whole episode and calculate the discounted 
 as well as $\pi_{𝜃}(a_t \mid s_t)$:
 
 $$
- \{(s_t, a_t, r_t)\} -> \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
+ \{(s_t, a_t, r_t)\} \arrow \{(\pi_{𝜃}(a_t \mid s_t), G_t)\}
 $$
 
 ### 2. Actor-Critic Methods:
