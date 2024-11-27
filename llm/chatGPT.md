@@ -19,7 +19,7 @@ It is the 3rd step where a Reward Model(RM) is trained and it is used to further
 
 refer `rl/PPO.md` for the introduction of PPO.
 
-PPO can be regarded as a simple variation of Policy Gradient (PG). In PG, we need know current reward of the state $r_t$,
+PPO can be regarded as a simple variation of Policy Gradient (PG). In PG, we need know current reward of the state $r_t$ after $a_t$,
 and policy function $\pi_{\theta}(a_t \| s_t)$, they are replaced by RM and Language model:
 
 | In PG | In ChatGPT |
