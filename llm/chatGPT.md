@@ -34,7 +34,7 @@ and $y_t^{(a)}$ is more preferable than $y_t^{(b)}$.
 the loss is:
 
 $$
-L = -\log\left(\frac{\exp(RM(x_t, y_t^{(a)})) + \exp(R(x_t, y_t^{(b)}))}{\exp(R(x_t, y_t^{(a)}))}\right)
+L = -\log\left(\frac{\exp(RM(x_t, y_t^{(a)})) + \exp(RM(x_t, y_t^{(b)}))}{\exp(RM(x_t, y_t^{(a)}))}\right)
 $$
 
 ### How to use PPO to finetune the SFT
