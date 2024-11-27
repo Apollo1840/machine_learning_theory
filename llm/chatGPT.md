@@ -23,7 +23,7 @@ $$
 L = -\log\left(\frac{\exp(RM(A)) + \exp(RM(B))}{\exp(RM(A))}\right)
 $$
 
-Lets write RM as $RM(x_t, y_t)$: 
+Lets write RM as $RM(x, y)$: 
 
 We have a pair $(y_t^{(a)} \| x_t, y_t^{(b)} \| x_t)$, 
 - $x_t$ is the current prompt.
