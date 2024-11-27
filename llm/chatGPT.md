@@ -20,9 +20,15 @@ After we get a bunch of preference pairs (A, B), meaning A is more preferable ov
 We can define the loss as following:
 
 $$
-L = -\log\left(\frac{\exp(R(A)) + \exp(R(B))}{\exp(R(A))}\right)
+L = -\log\left(\frac{\exp(RM(A)) + \exp(RM(B))}{\exp(RM(A))}\right)
 $$
 
+lets be more specific: we have a pair $(a_t^1 \| s_t, a_t^2 \| s_t)$,
+the loss is:
+
+$$
+L = -\log\left(\frac{\exp(RM(s_t, a_t^1)) + \exp(R(s_t, a_t^2))}{\exp(R(s_t, a_t^1))}\right)
+$$
 
 ### How to use PPO to finetune the SFT
 
