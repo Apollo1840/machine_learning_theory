@@ -23,8 +23,9 @@ $$
 L = -\log\left(\frac{\exp(RM(A)) + \exp(RM(B))}{\exp(RM(A))}\right)
 $$
 
-lets be more specific: 
-we have a pair $(y_t^{(a)} \| x_t, y_t^{(b)} \| s_t)$, 
+Lets be more specific: 
+
+We have a pair $(y_t^{(a)} \| x_t, y_t^{(b)} \| s_t)$, 
 - $x_t$ is the current prompt.
 - $y_t^{(a)}$ means one response of the model,
 - $y_t^{(b)}$ means another response of the model, 
