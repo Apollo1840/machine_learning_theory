@@ -25,7 +25,7 @@ $$
 
 Lets be more specific: 
 
-We have a pair $(y_t^{(a)} \| x_t, y_t^{(b)} \| s_t)$, 
+We have a pair $(y_t^{(a)} \| x_t, y_t^{(b)} \| x_t)$, 
 - $x_t$ is the current prompt.
 - $y_t^{(a)}$ means one response of the model,
 - $y_t^{(b)}$ means another response of the model, 
