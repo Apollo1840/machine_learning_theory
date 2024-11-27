@@ -23,11 +23,14 @@ $$
 L = -\log\left(\frac{\exp(RM(A)) + \exp(RM(B))}{\exp(RM(A))}\right)
 $$
 
-lets be more specific: we have a pair $(a_t^1 \| s_t, a_t^2 \| s_t)$,
+lets be more specific: we have a pair $(a_t^{(1)} \| s_t, a_t^{(2)} \| s_t)$, 
+$s_t$ is the current prompt.
+$a_t^{(1)}$ means one response of the model,
+$a_t^{(2)}$ means another response of the model, and $a_t^{(1)}$ is more preferable than $a_t^{(2)}$.
 the loss is:
 
 $$
-L = -\log\left(\frac{\exp(RM(s_t, a_t^1)) + \exp(R(s_t, a_t^2))}{\exp(R(s_t, a_t^1))}\right)
+L = -\log\left(\frac{\exp(RM(s_t, a_t^{(1)})) + \exp(R(s_t, a_t^{(2)}))}{\exp(R(s_t, a_t^{(1)}))}\right)
 $$
 
 ### How to use PPO to finetune the SFT
