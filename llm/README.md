@@ -12,3 +12,5 @@ How is ChatGPT built: `how_to_build_chatGPT.md`.
 
 ### RAG
 refer to `RAG.md`.
+
+### Reasoning AI
