@@ -11,6 +11,31 @@ There are three steps to build chatGPT:
 
 ## Details of pretraining and finetuning
 
+
+### During pretraining
+- Obviously, data scale is big (TBs), model is big as well (trillions of parameters)
+- Sentences are tokenized with subwords(precision between characters and words). (method like: BPE)
+
+```python
+  # BPE: Byte Pair Encoding
+  "unbelievable runners ran unbelievably fast."
+  # ->
+  ["un", "believable", " ", "runner", "s", " ", "ran", " ", "unbelievable", "ly", " ", "fast", "."]
+    
+```
+- Next token prediction includes long documents.
+- Obviously, training skills are applied:
+    - Data augmentation (noise adding, sentences swap)
+    - Gradient clipping
+    - Weights warm up
+- Some calculation tricks are applied:
+    - Mix precision
+
+    
+### During finetuning
+- Data in high-quality and diverse.
+- Data includes long conversation.
+
 ## RLHF (Reinforcement Learning from Human Feedback)
 It is the 3rd step where a Reward Model(RM) is trained and it is used to further finetune the SFT through Proximal Policy Optimization (PPO).
 
