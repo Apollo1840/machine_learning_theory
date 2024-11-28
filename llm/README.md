@@ -2,7 +2,13 @@
 
 ## Theory
 
+## Implmentation
+
+### Chatbot
+
 How is ChatGPT built: `how_to_build_chatGPT.md`.
 
-## Prompt engineering
-## RAG
+### Prompt engineering
+
+### RAG
+refer to `RAG.md`.

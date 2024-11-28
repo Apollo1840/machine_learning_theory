@@ -1,5 +1,5 @@
 # Generative AI
 
 ## Image Generation
-## Chatbots
+## Video Generation
 ## Multi-modal cross application
