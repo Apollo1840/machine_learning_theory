@@ -13,17 +13,36 @@ Key Concepts
 - **Chunk**: The original text corresponding to an embedding vector.
 - **Support Chunks**: Chunks retrieved from the KDB to support a query.
 
-
-## Split of the corpus
+## Tech details
+### Split of the corpus
 - Fix length of tokens
 - Semantic segmentation (How to?)
 - Fix length with overlapping.
 
-## Elevate the speed of retrieving
+### Elevate the speed of retrieving
 - Approximate Nearest Neighbor (ANN) Search
 - Clustering the embedding beforehand
 - Compress the embedding. (eg. PCA)
 
-## Define the number of support chunks
+### Define the number of support chunks
 - Heuristic
 - Dynamic based on similarity score threshold
+
+## Related topics
+
+### Query Augmentation
+
+A simple calculation of similarity between the query and embeddings may not yield high-quality support chunks.
+
+Solutions to Improve Support Chunk Retrieval:
+- **Query Professionalization**:
+When users use everyday language but the KDB contains professional or technical descriptions, the query should be transformed into a more formal format and enriched with relevant terminology.
+
+- **Query Splitting**:
+For complex queries that cover multiple aspects or a chain of tasks, the query should be analyzed and split into smaller, focused sub-queries. 
+  These sub-queries can be processed in parallel to retrieve more comprehensive support chunks.
+
+- **Context Augmentation**:
+For queries that depend on contextual information, the query needs to be enhanced with additional dialoge context to improve retrieval accuracy.
+
+These solutions often require the assistance of an LLM for effective implementation.
