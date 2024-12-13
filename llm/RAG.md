@@ -16,8 +16,8 @@ Key Concepts
 ## Tech details
 ### Split of the corpus
 - Fix length of tokens
-- Semantic segmentation (How to?)
 - Fix length with overlapping.
+- Semantic segmentation (How to?)
 
 ### Elevate the speed of retrieving
 - Approximate Nearest Neighbor (ANN) Search
