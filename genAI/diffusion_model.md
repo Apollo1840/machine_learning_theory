@@ -23,37 +23,19 @@ for x, _ in dataloader:
 
 ### Noising(for train) and Denoising(for inference) details
 
-% \beta_t$ is the noise variance schedule, a predefined sequence of small positive numbers \(\beta_t \in (0, 1)\). It defines how much noise is added at each step \(t\) in the forward diffusion process. It serves as the foundation for defining $\alpha_t$ and $\bar{\alpha}_t$.
+$\beta_t$ is the noise variance schedule, 
+a predefined sequence of small positive numbers $\beta_t \in (0, 1)$. 
+It defines how much noise is added at each step $t$ in the forward diffusion process. 
+It serves as the foundation for defining $\alpha_t$ and $\bar{\alpha}_t$.
 
----
 
-## 2. \(\alpha_t\)
-\(\alpha_t\) represents the fraction of the original data retained at a single step \(t\) after noise is added. It is defined as:
-\[
-\alpha_t = 1 - \beta_t
-\]
+- $\alpha_t = 1 - \beta_t$
+- $\bar{\alpha}_t = \prod_{i=1}^t \alpha_i = \prod_{i=1}^t (1 - \beta_i)$
 
----
-
-## 3. \(\bar{\alpha}_t\) (Cumulative Alpha)
-\(\bar{\alpha}_t\) (or \(\alpha_t^{\text{hat}}\)) is the cumulative product of \(\alpha_t\) across all timesteps up to \(t\). It represents the fraction of the original data remaining after noise has been added in all steps from 1 to \(t\). It is defined as:
-\[
-\bar{\alpha}_t = \prod_{i=1}^t \alpha_i = \prod_{i=1}^t (1 - \beta_i)
-\]
-
----
-
-## Relationships
-
-### Forward Process (Training Stage)
-In the forward diffusion process, the noisy data at step \(t\), \(\mathbf{x}_t\), is computed as:
-\[
+$$
 \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \mathbf{\varepsilon}
-\]
-where:
-- \(\mathbf{\varepsilon} \sim \mathcal{N}(0, I)\) is Gaussian noise.
-
-Here, \(\bar{\alpha}_t\) determines how much of the original signal (\(\mathbf{x}_0\)) remains versus how much noise (\(\mathbf{\varepsilon}\)) is added.
+\text{where:} \mathbf{\varepsilon} \sim \mathcal{N}(0, I)
+$$
 
 ---
 
