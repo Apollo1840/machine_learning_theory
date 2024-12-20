@@ -32,6 +32,8 @@ It serves as the foundation for defining $\alpha_t$ and $\bar{\alpha}_t$.
 - $\alpha_t = 1 - \beta_t$
 - $\bar{\alpha}\_t = \prod_{i=1}^t \alpha_i = \prod_{i=1}^t (1 - \beta_i)$
 
+From this we have:
+
 $$
 \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \mathbf{\varepsilon}
 $$
