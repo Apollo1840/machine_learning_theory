@@ -5,7 +5,7 @@ reference: https://arxiv.org/pdf/2103.00020
 ## Prerequisites
 
 ### InfoNCE loss
-![infoNCE Loss]()
+![infoNCE Loss](https://github.com/Apollo1840/machine_learning_theory/blob/main/multi-modal/images/infoNCE.jpg?raw=true)
 
 ## Procedure
 1. Dataset Creation
