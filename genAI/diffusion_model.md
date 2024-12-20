@@ -39,7 +39,7 @@ where $\mathbf{\varepsilon} \sim \mathcal{N}(0, I)$
 
 Reverse process (inference): 
 $$
-\mathbf{x}_{t-1} = \frac{\mathbf{x}_t - \sqrt{1 - \bar{\alpha}_t} \mathbf{\varepsilon}_\theta(\mathbf{x}_t, t)}{\sqrt{\alpha_t}} + \sigma_t \mathbf{z}
+\mathbf{x}_{t-1} = \frac{\mathbf{x}_t - \sqrt{1 - \bar{\alpha}\_t} \mathbf{\varepsilon}\_\theta(\mathbf{x}_t, t)}{\sqrt{\alpha_t}} + \sigma_t \mathbf{z}
 $$
 where:
 - $\mathbf{\varepsilon}\_\theta$ is the model's predicted noise.
