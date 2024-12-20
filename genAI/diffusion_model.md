@@ -35,12 +35,15 @@ It serves as the foundation for defining $\alpha_t$ and $\bar{\alpha}_t$.
 $$
 \mathbf{x}_t = \sqrt{\bar{\alpha}_t} \mathbf{x}_0 + \sqrt{1 - \bar{\alpha}_t} \mathbf{\varepsilon}
 $$
+
 where $\mathbf{\varepsilon} \sim \mathcal{N}(0, I)$
 
 Reverse process (inference): 
+
 $$
 \mathbf{x}_{t-1} = \frac{\mathbf{x}\_t - \sqrt{1 - \bar{\alpha}\_t} \mathbf{\varepsilon}\_\theta(\mathbf{x}\_t, t)}{\sqrt{\alpha_t}} + \sigma_t \mathbf{z}
 $$
+
 where:
 - $\mathbf{\varepsilon}\_\theta$ is the model's predicted noise.
 - $\sigma_t = \sqrt{\beta_t}$ is added noise for stochasticity.
