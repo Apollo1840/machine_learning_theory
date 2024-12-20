@@ -15,10 +15,10 @@ Works are focus on **feature fusion**:
 ## Stage 2
 With the raise of Transformer, 
 people use transformer to unify the vision and language model.
-with Contrastive Language–Image Pre-training(**CLIP**)(https://openai.com/index/clip/) be a very good example.
+with Contrastive Language–Image Pre-training(**CLIP**)(`./CLIP.md`) be a very good example.
 
 With the raise of diffusion model and efficient latent space control. Image generation gets to a new milestone, 
-hence comes a new form of vision and language model focus on AI generation. 
+hence comes a new form of vision and language model focus on AI generation (text-guided image generation). 
 with **DALL-E 2**(https://openai.com/index/dall-e-2/) as a good example.
 
 
