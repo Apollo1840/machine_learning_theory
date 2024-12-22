@@ -9,8 +9,8 @@ reference:
 In a diffusion model development, a model is trained to predict the **noise participant** of a noisy image, 
 given its noising step number.
 
-- noise: $x' = x + \varepsilon$
-- noise participant: $x' = a*x + b * \varepsilon$
+- noise ($\varepsilon$): $x_t = x_0 + \varepsilon$
+- noise participant ($\varepsilon$): $x_t = a*x_0 + b * \varepsilon$
 
 ```python
 # pseudo code of core train_step
