@@ -6,8 +6,11 @@ reference:
 
 ## Denoising Diffusion Probabilistic Models (DDPM)
 
-In a diffusion model development, a model is trained to predict the noise participant of a noisy image, 
+In a diffusion model development, a model is trained to predict the **noise participant** of a noisy image, 
 given its noising step number.
+
+- noise: $x' = x + \delta x$
+- noise participant: $x' = a*x + b*\delta x$
 
 ```python
 # pseudo code of core train_step
@@ -49,12 +52,3 @@ $$
 where:
 - $\mathbf{\varepsilon}\_\theta$ is the model's predicted noise.
 - $\sigma_t = \sqrt{\beta_t}$ is added noise for stochasticity.
-
----
-
-## Summary
-- **\(\beta_t\)**: Defines the noise added at each step.
-- **\(\alpha_t\)**: Fraction of signal retained at a single step (\(\alpha_t = 1 - \beta_t\)).
-- **\(\bar{\alpha}_t\)**: Fraction of signal retained cumulatively across steps (\(\bar{\alpha}_t = \prod_{i=1}^t \alpha_i\)).
-
-This framework ensures a consistent forward and reverse diffusion process.
