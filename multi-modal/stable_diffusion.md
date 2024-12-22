@@ -9,4 +9,11 @@ The innovation of SD is that:
 - the diffusion process happens in latent space. 
 - the guide machnimus is a little different.
 
-## GLIDE
+## Text Guide
+
+In GLIDE(https://arxiv.org/pdf/2112.10741), the text embedding is just like time embedding,
+it is add to the intermediate features of the UNet:
+
+$$
+h_t = h_t + \phi (t) + \Phi_\theta (t)
+$$
