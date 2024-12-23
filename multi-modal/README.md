@@ -19,7 +19,7 @@ with Contrastive Language–Image Pre-training(**CLIP**)(`./CLIP.md`) be a very 
 
 With the raise of diffusion model and efficient latent space control. Image generation gets to a new milestone, 
 hence comes a new form of vision and language model focus on AI generation (text-guided image generation). 
-with **DALL-E 2**(https://openai.com/index/dall-e-2/) as a good example.
+with **Stable Diffusion**(`stable_diffusion.md`) as a good example.
 
 
 ## Stage 3
