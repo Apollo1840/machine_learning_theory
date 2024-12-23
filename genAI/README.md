@@ -113,3 +113,4 @@ Procedure:
 ### Advanced methods
 - 3DGen: from Meta, combine NeRF and diffusion models. (https://scontent-muc2-1.xx.fbcdn.net/v/t39.2365-6/449707112_509645168082163_2193712134508658234_n.pdf?_nc_cat=111&ccb=1-7&_nc_sid=3c67a6&_nc_ohc=4P16BvvLQIgQ7kNvgEnaDTl&_nc_zt=14&_nc_ht=scontent-muc2-1.xx&_nc_gid=Ah3_D4TDJt5eqXiKIhGW2Qh&oh=00_AYD9V_A0r8PLTwclmlkvkBxTU646TQDHExABMOJHut0nUg&oe=676F4511)
 - Shap-E: from OpenAI, use implicit representation as well, but is a mesh generator (https://github.com/openai/shap-e)
+- TPA3D: based on GAN.
