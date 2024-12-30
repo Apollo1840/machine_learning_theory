@@ -30,10 +30,10 @@ Key idea:
 In your ROS development, you will need to implement your own Simulation with ROS nodes to-be controlled or listened.
 
 #### Sensing: Radar
-- Ultrasonic Radar: return distance. 
-- MMW Radar: return point clouds: {(x, y, z, v)}. v for velocity, represent the speed to point towards radar center.
-- LiDAR: return point clouds: {(x, y, z, i)}. i for intensity, can be used to infere the material.
-- Depth Camera: return RGB-D image: (width, height, depth, color) eg. ToF Camera
+- **Ultrasonic Radar**: return distance. 
+- **MMW Radar**: return point clouds: {(x, y, z, v)}. v for velocity, represent the speed to point towards radar center.
+- **LiDAR**: return point clouds: {(x, y, z, i)}. i for intensity, can be used to infere the material.
+- **Depth Camera**: return RGB-D image: (width, height, depth, color) eg. ToF Camera
 - Others
     - Pulse Doppler Radar
     - Structured Light Camera
@@ -50,7 +50,9 @@ Based on several science equations, the robotic(including electrocal) system can
 a special form of differential equation:
 
 $$
-\dot{x}(t) = A x(t) + B u(t) \\
+\dot{x}(t) = A x(t) + B u(t)
+$$
+$$
 y(t) = C x(t) + D u(t)
 $$
 
