@@ -6,7 +6,9 @@
 - Hardware: Embedded electronics
 - Software base:
     - ROS framework.
-    - Sensing: Video, Radar, IMU, SLAM, object detection
+    - Sensing: 
+        - direct: Video, Radar, IMU
+        - comprehension: SLAM, object detection
     - Control: based control thoery (PID, robotics)
 - Learning:
     - RL
