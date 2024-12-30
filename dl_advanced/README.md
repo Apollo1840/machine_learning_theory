@@ -1,4 +1,4 @@
 # Advanced Deep Learning
 
-
-## Edge AI, low-cost design
+## Efficient AI, lower resource design
+## Edge AI, minimum-cost design
