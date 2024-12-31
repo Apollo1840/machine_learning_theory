@@ -3,7 +3,7 @@
 
 ## Prerequisites
 
-- Hardware: Embedded electronics
+- Hardware: Embedded electronics, mechanics
 - Software base:
     - ROS framework.
     - Sensing: 
@@ -42,7 +42,7 @@ In your ROS development, you will need to implement your own Simulation with ROS
 
 #### Sensing: IMU
 Return sensor physical status including but not limited to:
-- Acceleration (x,y,z)
+- Acceleration (x, y, z)
 - Angular velocity (x, y, z)
 - Orientation (x, y, z)
 - Megnetic Field (B1, B2, B3)
@@ -71,7 +71,53 @@ $$
 $K_p$, $K_i$ and $K_d$ can somehow be figured out. Either emporalcally or calculated if State-Space Model is clear.
 
 
-# Embodied Intelligence
+## Embodied Intelligence
 
 Can be understood as highly level sensing (including deep understanding and reasoning, world rules modeling) 
 and a more rational, target-specific, strategical motion control.  
+
+The whole concept of embodied AI can be put into a RL framework, with following additional concepts:
+- higher level perception of the environment.
+- more reactive, complex and sophisticated goals build upon some core values.
+- more realistic design of each parts of the algorithm facing towards real world.
+- continuous learning and lifelong adjust and update of the model.
+- evolve morphology design of the agent.
+- emphasize generablilty.
+- Trying to virtuous cycle of learning(perception) and doing(action).
+
+
+### Simulated environment
+
+Instead of learning from static datasets or directly from interactions in the full real world, 
+Embodied AI primarily trains in simulated environments, 
+either constrained real-world scenarios or fully virtual settings, 
+with a strong emphasis on the latter—interactive virtual environments.
+
+Just like `envs` in OpenAI gym. Those envs accept actions (of an agent) and return the state of env stepwise.
+Compare to OpenAI gym, those envs usually contains image from the camera of the agent and the image tends to be photo realistic.
+And the actions can be more detailed and map to complete controls of the robot agent.
+
+for example:
+- Gibson, focus on photo-realistic FPV, and refined segmentation.
+- AI-Thon, focus on more complex iterations to the elements in the env. 
+
+**Static datasets**
+Some dataset are not interactive but contains annotated series of actions or trajectory. Those datasets can be used to:
+- pretrain the model
+- imitation learning
+- offline RL
+
+## Focused area
+
+### Joint learning of morphology and policy
+Deep Evolutionary Reinforcement Learning (DERL)
+
+### Multi-task generation
+- Multi-task RL
+- Meta-Learning
+
+### Multi-modal perception
+
+### LLM-control
+
+### Bionic robot
