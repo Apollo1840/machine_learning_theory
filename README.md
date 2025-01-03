@@ -35,3 +35,24 @@ This is a highly advanced book that strives to be as deep as possible, but it do
     - Multi-modal cross application
 - AI Agents
 - (EAI) Embodied Intelligence
+
+## Application
+Nowadays, the application of AI nearly covers everything, but we still can trying to list
+all its ablities.
+
+### Modality
+One way is categorized them by modalities of input/output:
+- text to text
+    - natural chat
+    - text-based/code-based tasks (almost cover everything, but the intelligence level is limited)
+    - text to diagram: flow chart, mind map
+- image to image: coloring, segementation
+- text to image
+- image to text
+  - image to structured data
+
+### Major/Discipline
+Another way is categorized them by human-defined field:
+
+![AI applications](./images/ai_applications.jpeg)
+
