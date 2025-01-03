@@ -83,6 +83,8 @@ The whole concept of embodied AI can be put into a RL framework, with following 
 - continuous learning and lifelong adjust and update of the model.
 - evolve morphology design of the agent.
 - emphasize generablilty.
+- emphasize interpretability, more cautious.
+- emphasize robustness.
 - Trying to virtuous cycle of learning(perception) and doing(action).
 
 
@@ -107,17 +109,26 @@ Some dataset are not interactive but contains annotated series of actions or tra
 - imitation learning
 - offline RL
 
-## Focused area
 
-### Joint learning of morphology and policy
+## Category
+
+- Embodied Perception: Multi-modal
+- Embodied Interation: eg. grasp, voice control
+- Embodied Agents: mix perception and action, focus on planning.
+- Sim2Real Adaption: focus on details of transfering robots from simulation to real world.
+
+
+### Hip area
+
+#### Joint learning of morphology and policy
 Deep Evolutionary Reinforcement Learning (DERL)
 
-### Multi-task generation
+#### Multi-task generation
 - Multi-task RL
 - Meta-Learning
 
-### Multi-modal perception
+#### Multi-modal perception
 
-### LLM-control
+#### LLM-control
 
-### Bionic robot
+#### Bionic robot
