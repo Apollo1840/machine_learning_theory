@@ -13,3 +13,8 @@ NAS with combined target.
 
 ## Calculation optimization
 - Quantization & Mixed Precision
+
+
+## Focus on Transformer
+- Efficient Transformer variants: 
+  https://www.notion.so/Transformer-variants-1605e815919080acb611faed9de730fa?pvs=4

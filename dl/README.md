@@ -20,3 +20,13 @@ Batch Normalization
 
 Parameter tunning
 
+# Q & A
+Knowledges formated as Questions and Answers:
+goto: https://github.com/Apollo1840/leetAI
+clone it and start it with :
+
+```bash
+docker-compose up
+```
+
+
