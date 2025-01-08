@@ -13,7 +13,14 @@ references:
 
 ## How feature selection
 
-Above all, AIC and BIC are two methods used to balance #features and performance.
+Strategy: 
+- If you have a large number of features (e.g., high-dimensional data) → Filter methods (e.g., Mutual Information, PCA)
+- If computational cost is not a concern and you need high accuracy → Wrapper methods (e.g., RFE, SFS)
+- If using tree-based models → Embedded methods (e.g., Feature importance from Random Forest, XGBoost)
+- If using deep learning models → Autoencoders, SHAP, Permutation Importance
+
+
+Above all, **AIC** and **BIC** are two methods used to balance #features and performance.
 We will prefer model with lower AIC or BIC value.
 
 Comparison:
@@ -23,16 +30,16 @@ Strategy:
 - If you want a balance between fit and complexity → Use AIC
 - If you have a large dataset and want a simpler model → Use BIC
 
-### Statistic-based
+### Statistic-based (Filter methods)
 
 
 - Correlation based (**N**umerical vs **N**umerical)
 - T-test to ANOVA (**N**numerical vs **C**ategorical)
 - Chi-Square test (**C**ategorical vs **C**ategorical)
 - Mutual information (**C**ategorical vs **C**ategorical)
+- PCA
 
-
-### Correlation based
+#### Correlation based
 Drawback: can capture linear relation only.
 
 #### t-test to ANOVA
@@ -51,14 +58,22 @@ categorical vs categorical:
 #### Mutual information
 
 $$
-\[
 I(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x, y) \log \left( \frac{P(x, y)}{P(x) P(y)} \right)
-\]
 $$
 
-### Model-based
+(memorize tip: $\frac{P(x, y)}{P(x) P(y)}$ often used to measure dependency).
+
+### Model-based (Wrapper methods)
+
+- RFE (needs importance measure)
+- SFS-Backwards/SFS-Forwards/BiSFS
+- GA
 
 #### Tree model
 
+**Feature importance**
+
 #### Neural Net
+
+**SHAP**
 
