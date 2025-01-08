@@ -22,7 +22,13 @@ So it is strong connected to multi-modal learning nowadays.
 
 ### Methodology
 
-The methodology is developed from VAE, GAN to diffusion models, transformers.
+Reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0-%E8%87%AA%E7%9B%91%E7%9D%A3%E5%AD%A6%E4%B9%A0.one%7Cbc0a5402-dd19-445e-b1c4-77c46195e6f7%2F%E7%94%9F%E6%88%90%E5%BC%8F%E6%A8%A1%E5%9E%8B%7C5ec031da-0616-47fc-a778-3c13dec3dfe4%2F%29&wdorigin=NavigationUrl
+
+- Autoregressive models: PixelCNN/PixelRNN, GPT.
+- VAE
+- GAN
+- Diffusion models
+- Flow models: RealNVP/Glow
 
 ## Text Generation
 Transformers are dominating the field.
@@ -39,7 +45,7 @@ Most research area, with diffusion models dominating the field
 
 ### Standard methods
 - Parameters generation: use parameterized synthesizer to generate the sound
-- Spectral generation: mostly Mel, first use model to generate the Mel, then use Vocoder to transform Mel into wave form.
+- Spectral generation: mostly **Mel**, first use model to generate the Mel, then use Vocoder to transform Mel into wave form.
 - End-to-end: directly generate the waveform.
 
 
@@ -51,6 +57,8 @@ Tacotron is a spectral generator, it has two parts:
 - Mel-to-Waveform model (vocoder)
 
 #### WaveNet
+
+**Vocoder**: Mel -> Waveform
 
 A standard vocoder is the famous **WaveNet**.
 
