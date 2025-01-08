@@ -17,7 +17,7 @@ Strategy:
 - If you have a large number of features (e.g., high-dimensional data) → Filter methods (e.g., Mutual Information, PCA)
 - If computational cost is not a concern and you need high accuracy → Wrapper methods (e.g., RFE, SFS)
 - If using tree-based models → Embedded methods (e.g., Feature importance from Random Forest, XGBoost)
-- If using deep learning models → Autoencoders, SHAP, Permutation Importance
+- If using deep learning models → SHAP
 
 
 Above all, **AIC** and **BIC** are two methods used to balance #features and performance.
@@ -69,11 +69,21 @@ $$
 - SFS-Backwards/SFS-Forwards/BiSFS
 - GA
 
-#### Tree model
+Feature importance:
+- Coefficients in linear alike model, such as linear regression, SVM.
+- MDI(Mean Decrease in Impurity): Decrease of Gini score in DT.
+- MDA(Mean Decrease in Accuracy): After randomly shuffled the feature.
 
-**Feature importance**
+#### Random forest
+
+Impurity decrease is **weighted** by number of points in each decision node.
+Importance is **sumed** upon all decision trees. 
 
 #### Neural Net
 
-**SHAP**
+SHAP: 
+SHAP value measures how feature contributes to certain output. 
+Average absolut SHAP value measures the importance of features.
+
+reference: https://arxiv.org/abs/1705.07874v2
 
