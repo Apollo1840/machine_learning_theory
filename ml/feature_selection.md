@@ -26,10 +26,19 @@ Strategy:
 ### Statistic-based
 
 
-- Correlation based (numerical vs numerical)
-- Chi-Square test (categorical vs categorical)
-- T-test to ANOVA (numerical vs categorical)
-- Mutual information
+- Correlation based (**N**umerical vs **N**umerical)
+- T-test to ANOVA (**N**numerical vs **C**ategorical)
+- Chi-Square test (**C**ategorical vs **C**ategorical)
+- Mutual information (**C**ategorical vs **C**ategorical)
+
+
+### Correlation based
+Drawback: can capture linear relation only.
+
+#### t-test to ANOVA
+ANOVA has the same purpose as t-test, but designed for more than two factors and methodolgically based on f-test.
+
+(Ps. f-test can be understood as variance ratio test)
 
 #### Chi-Square test
 categorical vs categorical:
@@ -39,10 +48,13 @@ categorical vs categorical:
 
 (Ps. chi-square test is used to test whether the variance is significant)
 
-#### t-test to ANOVA
-ANOVA has the same purpose as t-test, but designed for more than two factors and methodolgically based on f-test.
+#### Mutual information
 
-(Ps. f-test can be understood as variance ratio test)
+$$
+\[
+I(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x, y) \log \left( \frac{P(x, y)}{P(x) P(y)} \right)
+\]
+$$
 
 ### Model-based
 
