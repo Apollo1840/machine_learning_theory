@@ -33,6 +33,8 @@ Reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migr
 ## Text Generation
 Transformers are dominating the field.
 
+Speech-to-Text(STT): Mozilla Deep Speech
+
 ## Image Generation
 Most research area, with diffusion models dominating the field
 
