@@ -52,9 +52,9 @@ In hard margin case, to maximize margin, we solve:
 
 $$
 \min_{\mathbf{w}, b} \|\mathbf{w}\|
-
+$$
+$$
 \text{s.t.} \quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) \geq 1, \quad \forall i = 1, \dots, N
-
 $$
 
 
