@@ -66,6 +66,7 @@ $$
 $$
 
 Furthermore, we do not want successfully classified points contributes to the loss, so we apply **hinge loss** to deactivate them.
+
 $$
 \min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + max(0, \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )})
 $$
