@@ -12,3 +12,7 @@ How to avoid:
 
 ## Exclude outlier
  
+
+## Normalization
+- Standardization
+- min-max normalization

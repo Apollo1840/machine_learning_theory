@@ -45,10 +45,23 @@ Prerequisites of ML, introduced in `data_engineering_for_ml.md`
 and `feature selection.md`. 
 
 ## Models
-models for supervised learning(`supervised_learning.md`) and unsupervised learning(`unsupervised_learning.md`).
+models for:
+- supervised learning(`supervised_learning.md`)
+- unsupervised learning(`unsupervised_learning.md`)
+- semi-supervised learning(`sem_supervised_learning.md`)
+
+### Model hyperparameter tunning
+reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E4%BB%80%E4%B9%88%E6%98%AFvalidation%7Cbb5bcda5-fc9c-41a4-b7ec-0fe57818b2d5%2F%29&wdorigin=NavigationUrl
+
+Based on validation.
+- leave-one-out
+- K-fold
+
 
 ### Model regularization
 ### Model essembling
+reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2FModel%20ensembles%7C99d21978-2a52-40c3-b291-e74ea0e2b50a%2F%29&wdorigin=NavigationUrl
+
 - Bagging: separate models are trained on multiple subsets of the original datasets(i.e. bootstrapping).
 - Boosting: Models are trained one by one, and each new model is trained to correct the errors of the previous models(eg. via weighting).
 - Stacking: The prediction of the base learners are input features of the meta-model.
