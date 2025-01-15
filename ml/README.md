@@ -92,6 +92,9 @@ clone it and start it with :
 docker-compose up
 ```
 
+# Appendix: Industrial
+see `industrial_guidance.md`.
+
 # Appendix: Implementation
 - Popular Github: https://github.com/eriklindernoren/ML-From-Scratch/blob/master/mlfromscratch
 - My Github:  https://github.com/Apollo1840/Machine-Learning-Tech
