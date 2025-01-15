@@ -60,6 +60,7 @@ $$
 In soft margin case, we loosen the constraints to a penalty term of the target.
 
 We got:
+
 $$
 \min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )}
 $$
