@@ -44,8 +44,24 @@ To reduce model complexity
 - Cost Complexity Pruning (CCP): Measures the trade-off between tree complexity and error reduction.
 
 ### SVM
+reference: https://www.youtube.com/watch?v=bM4_AstaBZo&ab_channel=ritvikmath
+
+Intuition: maximize the margin between linear decision boundary line and 'support vectors'(closest to the linear decision boundary)
+
+In hard margin case, to maximize margin, we solve:
+
+$$
+\min_{\mathbf{w}, b} \|\mathbf{w}\|
+
+\text{s.t.} \quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) \geq 1, \quad \forall i = 1, \dots, N
+
+$$
+
 
 SVM with kernel
+
+
+
 
 ### kNN
 K-Nearest Neighbors (KNN) is machine learning algorithm used for both classification and regression tasks. It works based on the idea that similar data points are close to each other in the feature space.
