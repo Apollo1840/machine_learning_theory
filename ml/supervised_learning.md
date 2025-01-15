@@ -92,9 +92,21 @@ $$
 
 #### SVM kernel II
 In another aspect, we could use landmarks to up-project the points to distance-feature to those landmarks with gaussian function:
-$f_i = \exp \left( -\frac{\|x - l^{(i)}\|^2}{2\sigma^2} \right)$.
+$$
+f_i = \exp \left( -\frac{\|x - l^{(i)}\|^2}{2\sigma^2} \right)
+$$.
 
-If choose other data points as landmarks, and we do not choose gaussian kernel, but polynomial kernel such as $(x^{T}y + 1)^{2}$, it will be methdological same as SVM kernel I theory.
+If choose other data points as landmarks, and we do not choose gaussian kernel, but polynomial kernel such as $(x^{T}y + 1)^{2}$.
+
+$$
+f_i = \exp \left( -\frac{\|x - x_{i}\|^2}{2\sigma^2} \right)
+$$.
+
+$$
+f_i = (x^{T}x_i + 1)^{2}
+$$.
+
+, it will be methdological same as SVM kernel I theory as if we up-project `(x_i^{(0)}, x_i^{(1)})` to `(1, x_i^{(0)}, x_i^{(1)}, {x_i^{(0)}}^2, {x_i^{(1)}}^2, x_i^{(0)}x_i^{(1)})` 
 
 ### kNN
 K-Nearest Neighbors (KNN) is machine learning algorithm used for both classification and regression tasks. It works based on the idea that similar data points are close to each other in the feature space.
