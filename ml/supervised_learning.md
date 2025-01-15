@@ -44,11 +44,13 @@ To reduce model complexity
 - Cost Complexity Pruning (CCP): Measures the trade-off between tree complexity and error reduction.
 
 ### SVM
-reference: https://www.youtube.com/watch?v=bM4_AstaBZo&ab_channel=ritvikmath
+reference: 
+- https://www.youtube.com/watch?v=bM4_AstaBZo&ab_channel=ritvikmath
+- https://www.youtube.com/watch?v=uV5TnFc7eaE&ab_channel=MachineLearningandAI
 
-Intuition: maximize the margin between linear decision boundary line and 'support vectors'(closest to the linear decision boundary)
+Intuition: maximize the margin between linear decision boundary line and 'support vectors'(closest to the linear decision boundary).
 
-In hard margin case, to maximize margin, we solve:
+1) In hard margin case, to maximize margin, we solve:
 
 $$
 \min_{\mathbf{w}, b} \|\mathbf{w}\|
@@ -57,7 +59,7 @@ $$
 \text{s.t.} \quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) \geq 1, \quad \forall i = 1, \dots, N
 $$
 
-In soft margin case, we loosen the constraints to a penalty term of the target.
+2) In soft margin case, we loosen the constraints to a penalty term of the target.
 
 We got:
 
@@ -71,12 +73,16 @@ $$
 \min_{\mathbf{w}, b} \lambda \|\mathbf{w}\| + \frac{1}{N} \sum_{i}{max(0, (1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) ))}
 $$
 
+(PS. If you draw this loss function, it is an linear estimation of logistic regression loss. see: https://www.youtube.com/watch?v=uV5TnFc7eaE&ab_channel=MachineLearningandAI)
+
 #### SVM dual
-There is a dual problem of SVM problem(optimization) where onyl the inner product of support vectors are curioused.
+There is a dual problem of SVM problem(optimization) where only the inner product of support vectors are curioused.
 
 #### SVM kernel
 
-Kernel trick is a trick to quickly compute the inner product of up-projected vectors, based on inner product of the original vectors.
+Kernel trick is a trick to quickly compute the inner product of up-projected vectors.
+
+In SVM case, this trick is based on inner product of the original vectors.
 
 In another word, we apply kernel function to the inner product of the original vectors and get the inner product of up-project vectors.
 
@@ -84,8 +90,11 @@ $$
 f(x)^{T}f(y) = K(x^{T}y)
 $$
 
+#### SVM kernel II
+In another aspect, we could use landmarks to up-project the points to distance-feature to those landmarks with gaussian function:
+$f_i = \exp \left( -\frac{\|x - l^{(i)}\|^2}{2\sigma^2} \right)$.
 
-
+If choose other data points as landmarks, and we do not choose gaussian kernel, but polynomial kernel such as $(x^{T}y + 1)^{2}$, it will be methdological same as SVM kernel I theory.
 
 ### kNN
 K-Nearest Neighbors (KNN) is machine learning algorithm used for both classification and regression tasks. It works based on the idea that similar data points are close to each other in the feature space.
