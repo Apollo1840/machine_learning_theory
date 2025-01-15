@@ -51,10 +51,17 @@ Intuition: maximize the margin between linear decision boundary line and 'suppor
 In hard margin case, to maximize margin, we solve:
 
 $$
-\min_{\mathbf{w}, b} \|\|\mathbf{w}\|\|
+\min_{\mathbf{w}, b} \|\mathbf{w}\|
 $$
 $$
 \text{s.t.} \quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) \geq 1, \quad \forall i = 1, \dots, N
+$$
+
+In soft margin case, we loosen the constraints to a penalty term of the target.
+
+We got:
+$$
+\min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )}
 $$
 
 
