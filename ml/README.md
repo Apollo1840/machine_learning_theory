@@ -40,11 +40,13 @@ typically by helping it learn the underlying structure and **distribution** of d
 
 
 
-## Data engineering and feature selection
+## Data
+Evolves **Data engineering** and **feature selection**.
+
 Prerequisites of ML, introduced in `data_engineering_for_ml.md` 
 and `feature selection.md`. 
 
-## Models
+## Model
 models for:
 - supervised learning(`supervised_learning.md`)
 - unsupervised learning(`unsupervised_learning.md`)
@@ -60,38 +62,28 @@ Based on validation.
 
 ### Model regularization
 ### Model essembling
-reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2FModel%20ensembles%7C99d21978-2a52-40c3-b291-e74ea0e2b50a%2F%29&wdorigin=NavigationUrl
-
-- Bagging: separate models are trained on multiple subsets of the original datasets(i.e. bootstrapping).
-- Boosting: Models are trained one by one, and each new model is trained to correct the errors of the previous models(eg. via weighting).
-- Stacking: The prediction of the base learners are input features of the meta-model.
-
-Except for the Stacking method, the final prediction of the model ensemble is the aggregated decision of all those models by hard or soft voting.
-
-Strategy: 
-- Bagging: when overfitting.
-- Boosting: when only weak models are allowed.
-- Stacking: when different strengths of multiple models are needed.
-
+see `model_ensembling.md`.
 
 ## Metrics
 
 ### Bias and Variance 
 Two key sources of error in machine learning models.
 
-- Bias: High bias means the model misses relevant relations, 
+- Bias: (Too **Stupid**) High bias means the model misses relevant relations, 
   leading to **underfiting**. This often happens to overly simplistic models, resulting in poor performance even on training datasets.
-- Variance: High variance indicates that the model is too sensitive to small fluctuations, captured noise, and outliers during training, 
+- Variance: (Too **Sensitive**) High variance indicates that the model is too sensitive to small fluctuations, captured noise, and outliers during training, 
   leading to **overfitting**. This often happens when the model has overly high capacity, and has excellent performance on training data but poor generalization to new data.
 
 **Solution**: 
 It is hard to reduce bias and variance simultaneously. 
-The **trade-off** is managed by choosing the proper model **type** and suitable model **capacity** and using **regularization** methods like data augmentation, penalty methods, and model ensembling.
+The **trade-off** is managed by:
+- choosing the proper model **type** and suitable model **capacity**.
+- using **regularization** methods like data augmentation, penalty methods, and model ensembling.
 
 ### Measurement
 To evaluate the models: `metrics.md`.
 
-# Q & A
+# Appendix: Q & A
 Knowledges formated as Questions and Answers:
 goto: https://github.com/Apollo1840/leetAI
 clone it and start it with :
@@ -100,6 +92,6 @@ clone it and start it with :
 docker-compose up
 ```
 
-# Implementation
+# Appendix: Implementation
 - Popular Github: https://github.com/eriklindernoren/ML-From-Scratch/blob/master/mlfromscratch
 - My Github:  https://github.com/Apollo1840/Machine-Learning-Tech

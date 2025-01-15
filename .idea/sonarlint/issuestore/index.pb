@@ -23,5 +23,3 @@ C
 dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
 E
 dl_advanced/robust.md,d/4/d4fa730a42af99b9edcf31a9170350c78a0fcd28
-=
-ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29

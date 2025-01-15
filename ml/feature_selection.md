@@ -10,8 +10,8 @@ In some cases, feature selection is necessary to avoid curse of dimensionality.
 
 ## Why feature selection
 
-- Lower computation cost
-- Prevents overfitting
+- Lower (computation) cost
+- Prevent overfitting
 - Improve interpretablity
 - Avoids Curse of Dimensionality (Fail to learn & Distance-failed)
 
