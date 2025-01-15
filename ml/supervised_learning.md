@@ -62,13 +62,13 @@ In soft margin case, we loosen the constraints to a penalty term of the target.
 We got:
 
 $$
-\min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )}
+\min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + (1/N) * \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )}
 $$
 
 Furthermore, we do not want successfully classified points contributes to the loss, so we apply **hinge loss** to deactivate them.
 
 $$
-\min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + max(0, \sum_{i}{(1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) )})
+\min_{\mathbf{w}, b} \lambda * \|\mathbf{w}\| + (1/N) * \sum_{i}{max(0, (1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) ))}
 $$
 
 
