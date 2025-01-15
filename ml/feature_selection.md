@@ -3,12 +3,17 @@
 references: 
 - https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E7%89%B9%E5%BE%81%E5%B7%A5%E7%A8%8B%7C4b4b192e-ecf1-418e-b6d3-79c5449e9103%2F%29&wdorigin=NavigationUrl
 
+Feature selection is selecting a subset of relevant features (variables, predictors) for use in model construction.
+
+It can help reduce training costs and overfitting. Additionally, it simplifies the model and enhances its interpretability.
+In some cases, feature selection is necessary to avoid curse of dimensionality.
+
 ## Why feature selection
 
-- Avoids Curse of Dimensionality (Fail to learn & Distance-failed)
-- Prevents overfitting
 - Lower computation cost
+- Prevents overfitting
 - Improve interpretablity
+- Avoids Curse of Dimensionality (Fail to learn & Distance-failed)
 
 
 ## How feature selection
@@ -30,14 +35,12 @@ Strategy:
 - If you want a balance between fit and complexity → Use AIC
 - If you have a large dataset and want a simpler model → Use BIC
 
-### Statistic-based (Filter methods)
+### Filter methods (Statistics-based)
 
-
-- Correlation based (**N**umerical vs **N**umerical)
-- T-test to ANOVA (**N**numerical vs **C**ategorical)
-- Chi-Square test (**C**ategorical vs **C**ategorical)
-- Mutual information (**C**ategorical vs **C**ategorical)
-- PCA
+-  **N**umerical vs **N**umerical (N vs N): Correlation based
+- **N**umerical vs **C**ategorical (N vs C): t-test, ANOVA
+- **C**ategorical vs **C**ategorical(C vs C): Chi-Square test, Mutual information 
+- PCA, LDA
 
 #### Correlation based
 Drawback: can capture linear relation only.
@@ -63,26 +66,28 @@ $$
 
 (memorize tip: $\frac{P(x, y)}{P(x) P(y)}$ often used to measure dependency).
 
-### Model-based (Wrapper methods)
+### Wrapper methods (Model-based)
 
 - RFE (needs importance measure)
-- SFS-Backwards/SFS-Forwards/BiSFS
+- SeqFS: SFS-Backwards/SFS-Forwards/BiSFS
 - GA
+- Lasso regression
 
 Feature importance:
-- Coefficients in linear alike model, such as linear regression, SVM.
-- MDI(Mean Decrease in Impurity): Decrease of Gini score in DT.
-- MDA(Mean Decrease in Accuracy): After randomly shuffled the feature.
+- Coefficients in linear alike model. (such as linear regression, SVM)
+- Mean Decrease in Impurity (**MDI**): Decrease of Gini score in DT.
+- Mean Decrease in Accuracy (**MDA**): After randomly shuffled THE feature of inputs.
 
 #### Random forest
 
-Impurity decrease is **weighted** by number of points in each decision node.
-Importance is **sumed** upon all decision trees. 
+DT: Impurity decrease is **weighted** by number of points in each decision node.
+
+RF: Importance is **sumed** upon all decision trees. 
 
 #### Neural Net
 
 SHAP: 
-SHAP value measures how feature contributes to certain output. 
+SHAP value measures how feature contributes to certain output (by removing that feature). 
 Average absolut SHAP value measures the importance of features.
 
 reference: https://arxiv.org/abs/1705.07874v2

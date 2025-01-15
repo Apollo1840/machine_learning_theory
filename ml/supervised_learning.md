@@ -1,36 +1,38 @@
+# Supervised learning methods
 
-## 0.1 Supervise learning
+## Regression
 
-### 0.1.1 Regression
-Linear regression
+### Linear regression
 
 Polynomial regression
 
 Advance:
+- Linear regression with AIC step
+- Ridge regression; Lasson regression
+- Robust regression
 
-Linear regression with AIC step
+## Classification
 
-Ridge regression; Lasson regression
+### Logistic regression
 
-Robust regression
+### Decision tree (forest)
 
-GradientBoosting
-
-Xgboosting
-
-### 0.0.2 Classification
-Decision tree (forest)
-
-Logistic Regression
-
-SVM
+### SVM
 
 SVM with kernel
 
-kNN
+### kNN
+K-Nearest Neighbors (KNN) is machine learning algorithm used for both classification and regression tasks. It works based on the idea that similar data points are close to each other in the feature space.
 
-NN (MLPClassifier: Multi-layer Perceptron)
+- classification: the label of an instance is the majority of labels of its k neighbors.
+- regression: the value of an input is the average value of its k neighbors.
 
-AdaBoosting
+disadvantage: too-strong assumption; memory and computationally intensive.
+
+
+
+### NN (MLPClassifier: Multi-layer Perceptron)
+
+### AdaBoosting
 
 

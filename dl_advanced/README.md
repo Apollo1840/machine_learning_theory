@@ -1,5 +1,14 @@
 # Advanced Deep Learning
 
+## Transfer learning
+It is a model **weights initialization** technique. 
+A model trained for one task is reused as the starting point for a model on another related task.
+
+### few-shots learning
+Train models with very limited amount of training samples, often just one or a few.
+
+Typically through transfer learning. A pretrained model is used to generate the embedding of the data and a trivial model (eg. a distance-based model) is used to accomplish the task.
+
 ## Robust AI
 see `robust.md`.
 
