@@ -71,10 +71,18 @@ $$
 \min_{\mathbf{w}, b} \lambda \|\mathbf{w}\| + \frac{1}{N} \sum_{i}{max(0, (1-\quad y_i (\mathbf{w} \cdot \mathbf{x}_i - b) ))}
 $$
 
+#### SVM dual
+There is a dual problem of SVM problem(optimization) where onyl the inner product of support vectors are curioused.
 
+#### SVM kernel
 
+Kernel trick is a trick to quickly compute the inner product of up-projected vectors, based on inner product of the original vectors.
 
-SVM with kernel
+In another word, we apply kernel function to the inner product of the original vectors and get the inner product of up-project vectors.
+
+$$
+f(x)^{T}f(y) = K(x^{T}y)
+$$
 
 
 
