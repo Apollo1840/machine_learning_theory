@@ -87,6 +87,13 @@ Representative Methods:
 - DETR (DEtection TRansformer) (2020)
 - DINO (2022)
 
+#### One-shot and two-shots
+In one-shot object detection, the neural network processes the image in a single pass to propose bounding boxes and class probabilities at the same time. 
+(YOLO: it divides the image into an S x S grid. Each grid cell predicts B bounding boxes and their corresponding confidence scores, as well as C class probabilities. IoU is used to reduce the duplicated bounding boxs.)
+
+In two-shot object detection, involves a two-stage process. The first stage generates region proposals. The second stage then classifies these proposals and refines their bounding boxes.
+(Fast R-CNN: First the network scans the image to propose regions that are likely to contain objects. The proposed regions are then cropped and resized, and passed through a network that classifies them and refines the bounding box coordinates.)
+
 ### Keypoint detection
 Task: Detects key landmarks (e.g., body joints, face landmarks, hand keypoints).
 

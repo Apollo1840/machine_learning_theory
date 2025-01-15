@@ -52,3 +52,6 @@ k-fold cross validation
 - Narrow the target or reframe the problem.
 - Combine pre-trained model with your model.
 - Combine unsurpervised and supervised model.
+
+## Model selection
+reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E6%97%A0%E6%A0%87%E9%A2%98%E9%A1%B5%7Cbf090600-823a-4368-888c-98ce7c370208%2F%29&wdorigin=NavigationUrl
