@@ -23,6 +23,11 @@ reference:
 - https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E5%88%86%E7%B1%BB%E5%99%A8%E5%88%97%E4%B8%BE%7C5b7bac14-a960-4d72-97b4-5523537a9fe7%2F%29&wdorigin=NavigationUrl
 - https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28ML.one%7Ce8b3e705-493c-431b-b04e-8e9e3752864d%2F01-Classification%7C9dbae856-01e1-45c3-b0dd-271fdcf88069%2F%29&wdorigin=NavigationUrl
   
+
+Binary classifier to Multi-classifier
+- OVR
+- OVO
+
 ### Logistic regression
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2FLogistic%20regression%20and%20kernel%7C540a838d-7ab5-46ef-930f-fe5b537a0815%2F%29&wdorigin=NavigationUrl
 
@@ -67,5 +72,7 @@ When mixed, how to transform categorical feature to numerical feature:
 ### NN (MLPClassifier: Multi-layer Perceptron)
 
 ### AdaBoosting
+
+
 
 

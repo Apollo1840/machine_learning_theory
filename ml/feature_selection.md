@@ -40,7 +40,7 @@ Strategy:
 -  **N**umerical vs **N**umerical (N vs N): Correlation based
 - **N**umerical vs **C**ategorical (N vs C): t-test, ANOVA
 - **C**ategorical vs **C**ategorical(C vs C): Chi-Square test, Mutual information 
-- PCA, LDA
+
 
 #### Correlation based
 Drawback: can capture linear relation only.
@@ -92,3 +92,6 @@ Average absolut SHAP value measures the importance of features.
 
 reference: https://arxiv.org/abs/1705.07874v2
 
+### Dimension reduction
+- PCA, LDA
+- t-SNE, UMAP

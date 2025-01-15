@@ -56,6 +56,14 @@ models for:
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E4%BB%80%E4%B9%88%E6%98%AFvalidation%7Cbb5bcda5-fc9c-41a4-b7ec-0fe57818b2d5%2F%29&wdorigin=NavigationUrl
 
 Based on validation.
+
+Validation provides an unbiased evaluation of a model. 
+except hyperparameter tunning, it can also be used to:
+- detect overfitting
+- select a model architecture
+
+Cross-validation involves partitioning the data into multiple subsets and using these subsets for both training and validation in different **combinations**. 
+It enables effect use of data to get a stronger benefit from utilizing valid datasets.
 - leave-one-out
 - K-fold
 
