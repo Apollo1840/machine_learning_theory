@@ -8,7 +8,7 @@ Clues:
 - Normalize data/weights (batchNorm, LayerNorm)
 - Add regularization term (penalty term to loss, such as L1, L2)
 - Decrease model capacity (dropout, distillation)
-- Adapt model ensembling
+- Adapt model Ensembling
 
 
 ## Data Augmentation
@@ -16,10 +16,16 @@ Clues:
 - Adversarial
 
 ## Model Normalization
-- BatchNorm
-- LayerNorm
-- GroupNorm
+
+- **BatchNorm**: Every feature is normalized independently across a batch.
+- **LayerNorm**: Every feature of a single layer with a single input is normalized across each other.
+- **InstanceNorm**: (Similar to LayerNorm) Every feature of a single layer with a single input is normalized across each other within one channel.
+- **GroupNorm**: Grouped instanceNorm, ie. some channels are grouped.
+
+(P.S. In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch)
+
 - Dropout
+
 
 ## Penalty
 - L1

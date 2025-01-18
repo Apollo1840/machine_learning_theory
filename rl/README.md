@@ -2,6 +2,7 @@
 
 references:
 - (My onenote): https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.one%7Cca12a274-13c7-4b7f-a61a-5d791241a9ae%2Flink%7C35812e9f-a465-4bcc-8efd-5537a1f5da01%2F%29&wdorigin=NavigationUrl
+- (My implementation): https://github.com/Apollo1840/Reinforcement-Learning-Tech
 
 ---
 
@@ -52,6 +53,8 @@ Methods:
 
 
 ### Model-based RL
+reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0.one%7Cca12a274-13c7-4b7f-a61a-5d791241a9ae%2FLesson%203%20DP%7C9e0cf76e-a2f9-4afd-acdd-98e1522f9350%2F%29&wdorigin=NavigationUrl
+
 In model-based RL, the environment is assumed to behave like a parameterized stochastic system, 
 and the goal is to learn the parameters of this environment model.
 Once the model of the environment is learned, it can be used to derive the optimal policy, which specifies the best actions to take in each state to achieve a desired outcome.
@@ -98,8 +101,11 @@ Methods:
   
 ## Basic Methods
 
+### MC & TD
+see `mc_td.md`.
+
 ### SARSA & Q-learning
-see `./sarsa_qlearning.md`
+see `./sarsa_qlearning.md`.
 
 - state space: finite
 - action space: finite
@@ -111,6 +117,7 @@ see `DQN.md`.
 - action space: finite
 
 ### PG-AC
-see `policy_gradient.md`
+see `policy_gradient.md`.
+
 - state space: $\infty$
 - action space: $\infty$

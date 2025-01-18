@@ -13,8 +13,6 @@ O
 dl_advanced/model_efficiency.md,f/d/fd8cad4f59bad1cbbf146fdd73aaed73078d99e3
 A
 genAI/wave_net.md,c/b/cbfab2ac662968c360132447df3a431976eb0ed1
-D
-dl/regularization.md,c/c/cce1efa06904fad34d480fb2ea03fdd087cb95c1
 :
 
 cv/unet.md,5/4/5442c93197f506fef4da5d6cbe96ac46737b5924
