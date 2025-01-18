@@ -39,15 +39,9 @@ M
 ml/data_engineering_for_ml.md,d/a/da9aa8f8e843b1dd874540ad9d1fe4cf0acdd95a
 G
 ml/feature_selection.md,8/8/8886cc46ab841fe6f54d2ae919c00fca5868e335
-=
-ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29
-I
-ml/supervised_learning.md,e/f/ef69a57886a3e96b2307166266f9c20ae45e7168
 E
 dl_advanced/robust.md,d/4/d4fa730a42af99b9edcf31a9170350c78a0fcd28
 E
 dl_advanced/README.md,a/c/ac30e9f2a0c9bbe1a7ff6bd2b92d2dfbb2cf1971
 9
 	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
-K
-ml/unsupervised_learning.md,e/9/e999e71104f7ef5a3b55f25b8c6df27f079db660

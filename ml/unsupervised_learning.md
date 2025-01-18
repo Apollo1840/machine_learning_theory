@@ -12,7 +12,7 @@ reference:
 ---
 
 - Partition-based
-  - K-means: iterative updated the center of k-clusters with the mean of the cluster members.
+  - K-means
   - Hierarchy  
 - Density-based
   - DBSCAN: by identifying core data points, clusters are found by core points infection, and regions of lower density will separate them.
@@ -25,6 +25,15 @@ reference:
 FCM
 
 SOM
+
+**k-means**
+
+iterative updated the center of k-clusters with the mean of the cluster members.
+
+how to determine k:
+- Elbow Method: enumerate k to find when within-cluster sum of squares(**WCSS**) is not decreasing fast.
+- instead of use WCSS, use other clustering metrics.
+
 
 
 
