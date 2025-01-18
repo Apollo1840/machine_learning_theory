@@ -3,9 +3,10 @@
 reference: https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
 
 
+
 ## Objective:
 
-The goal is to maximize the **expected cumulative reward** $J(𝜃)$, defined as:
+The goal is to find proper $\theta$ in $𝜋_𝜃(a \mid s)$ via maximizing the **expected cumulative reward** $J(𝜃)$, defined as:
 
 
 $$
