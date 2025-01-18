@@ -107,10 +107,10 @@ see `./sarsa_qlearning.md`
 ### DQN
 see `DQN.md`.
 
-- state space: $\inf$
+- state space: $\infty$
 - action space: finite
 
 ### PG-AC
 see `policy_gradient.md`
-- state space: infinite
-- action space: infinte
+- state space: $\infty$
+- action space: $\infty$
