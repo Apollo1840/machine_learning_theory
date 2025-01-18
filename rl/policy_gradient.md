@@ -2,7 +2,11 @@
 
 reference: https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
 
+---
 
+Policy Gradient is a method direct learn the policy function - $𝜋_𝜃(a \mid s)$. 
+
+So it could also be called $\pi$-learning regarding Q-learning is to learn the `Q(s, a)` table. 
 
 ## Objective:
 

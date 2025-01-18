@@ -13,7 +13,7 @@ The agent learns through receiving **feedback** from its actions within an envir
 
 ## Key concepts:
 
-def. Episode: a series of (state, action, reward).
+def. Episode: a series of `(state, action, reward)`.
 
 def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a$ in state $s$, parameterized by $𝜃$ (weights of a neural network, for instance).
 
