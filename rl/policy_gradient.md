@@ -63,7 +63,7 @@ $$
 $$
 
 For each episode, we will record the whole episode and calculate the discounted rewards ($G_t$) for each $t$,
-as well as the dependent variable $\pi_{𝜃}(a_t \mid s_t), $a_t$ is the action with highest probability:
+as well as the dependent variable $\pi_{𝜃}(a_t \mid s_t)$, $a_t$ is the action with highest probability:
 
 $$
  \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), G_t) \}
