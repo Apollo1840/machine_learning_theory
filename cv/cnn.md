@@ -13,3 +13,7 @@ In a convolutional layer, filters **slide** over the image spatially performing 
 
 
 After several convolutional layers, the deep feature maps are flattened to be further processed in the neural work to perform tasks like classification.
+
+# 1D CNN
+- TCN
+- WaveNet (see `./wavenet.md`)
