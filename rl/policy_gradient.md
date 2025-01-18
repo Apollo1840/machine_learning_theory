@@ -2,12 +2,6 @@
 
 reference: https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
 
-## Key concepts:
-
-def. Episode: a series of (state, action, reward).
-
-def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a$ in state $s$, parameterized by $𝜃$ (weights of a neural network, for instance).
-
 
 ## Objective:
 
