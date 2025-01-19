@@ -12,5 +12,12 @@ Seq2seq (sequence-to-sequence) problems involve mapping an input sequence to an 
 In a seq2seq problem, RNN could use the previous output as the current input to generate sequences until a certain output is obtained.
 
 
+## Advance RNN
+GRU and LSTM enhance the vanilla RNN by introducing gated mechanisms to 
+- handle **long-term** dependencies
+- **stabilize** training
+- provide more **flexibility** 
+  in processing sequence data.
+
 
 

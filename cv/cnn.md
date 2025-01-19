@@ -17,3 +17,4 @@ After several convolutional layers, the deep feature maps are flattened to be fu
 # 1D CNN
 - TCN
 - WaveNet (see `./wavenet.md`)
+

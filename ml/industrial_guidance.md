@@ -53,5 +53,33 @@ k-fold cross validation
 - Combine pre-trained model with your model.
 - Combine unsurpervised and supervised model.
 
+## Data amount
+
+### Rule of thumb
+- More complex models (e.g., large deep neural networks) usually need more data to generalize well.
+- Simpler models (e.g., linear regression with few parameters) can often achieve good performance with less data.
+
+What to look at:
+
+- Number of parameters: A neural network with millions (or billions) of parameters generally requires a large dataset—often in the thousands or millions of examples—to avoid severe overfitting.
+- Model capacity: Some architectures incorporate regularization (dropout, weight decay, etc.) that can mitigate overfitting, potentially allowing them to do more with less data.
+- Task difficulty: Tasks like image classification on complex datasets (e.g., ImageNet) inherently require more data than simpler tasks (e.g., MNIST digit classification).
+
+### Pratical rough guidelines
+Below are rough guidelines—these are not hard rules, but starting points:
+
+- Simple tasks (low complexity, few classes) 1,000–10,000 samples can be sufficient, depending on labeling quality and feature complexity.
+- Moderately complex tasks (e.g., multiple classes, diverse data) 10,000–100,000 samples may be needed for consistent performance, especially in deep learning contexts.
+- High complexity tasks (e.g., large-scale image classification, natural language understanding) 100,000+ (often millions) of examples for modern deep learning methods to work well.
+
+
+### Practical research
+- Reference similar benchmarks.
+
+- Start Small: Collect or label a small dataset to do rapid prototyping. Train a baseline model to see if the problem is tractable.
+- Generate a Learning Curve: Add more data in increments, measure how performance improves, and monitor if you approach a plateau.
+- Compare Gains vs. Cost: Adding more data means higher labeling costs, collection times, etc. Decide if the performance gains are worth the extra cost.
+- Iterate: If the model still shows high variance (overfitting), consider adding more data or applying stronger regularization. If it shows high bias (underfitting), consider a more complex model or more features.
+
 ## Model selection
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E6%97%A0%E6%A0%87%E9%A2%98%E9%A1%B5%7Cbf090600-823a-4368-888c-98ce7c370208%2F%29&wdorigin=NavigationUrl

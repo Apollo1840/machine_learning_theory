@@ -4,6 +4,8 @@
 It is a model **weights initialization** technique. 
 A model trained for one task is reused as the starting point for a model on another related task.
 
+see `transfer_learning.md` in details.
+
 ### few-shots learning
 Train models with very limited amount of training samples, often just one or a few.
 

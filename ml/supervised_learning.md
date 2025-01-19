@@ -8,7 +8,10 @@ reference:
 - https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2F%E7%BA%BF%E6%80%A7%E5%9B%9E%E5%BD%92%7Cd1449063-187d-41a7-93d4-c0f541144360%2F%29&wdorigin=NavigationUrl
 
 #### Assumptions
-
+- Linear: output is linearly dependent on the input variables.
+- ( | ) Column: no linear correlation between the input variables.
+- ( - ) Row: observations are i.d.d
+- ( r ) Residuals are i.d.d as a normal distribution with the same variance.
 
 #### Advance:
 - Linear regression with AIC step
