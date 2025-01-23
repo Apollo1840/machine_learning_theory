@@ -35,11 +35,26 @@ Binary classifier to Multi-classifier
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0.one%7C33be4c71-c6b8-4a35-b8fc-8a4f3ae05797%2FLogistic%20regression%20and%20kernel%7C540a838d-7ab5-46ef-930f-fe5b537a0815%2F%29&wdorigin=NavigationUrl
 
 ### Decision tree (forest)
+- Choose split: choose a feature and a threshold to split the data
+- Evaluate split: measure the quality of the split, determine whether split further or stop.
+- Assign label: assign label to the final leaf node.
+
+#### How to split
+
+In brutal force, we calculate all impurity gain of different feature and split combination.
+
+There are other tricks like:
+- Random: randomly choose feature (for RF)
+- Numerical trick: use Binary search; chunklise 
+- pre-selection: use important features only.
 
 #### Impurity measures
-- Gini score
+- Gini score: := $1 - \sum_{i=1}^{C} p_i^2$
+
 - Entropy
 - Missrate
+
+Impurity gain: $I - (p * I(1) + q * I(2))$.
 
 #### Post-Pruning 
 To reduce model complexity

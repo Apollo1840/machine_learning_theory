@@ -58,13 +58,22 @@ categorical vs categorical:
 
 (Ps. chi-square test is used to test whether the variance is significant)
 
+For numerical feature: discretization via creating bins.
+
 #### Mutual information
+
+MI measures the reduction in uncertainty about Y given knowledge of X.
 
 $$
 I(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x, y) \log \left( \frac{P(x, y)}{P(x) P(y)} \right)
 $$
 
 (memorize tip: $\frac{P(x, y)}{P(x) P(y)}$ often used to measure dependency).
+
+For numerical feature: 
+- discretization via creating bins.
+- (more common) use k-th NN to estimate the density hence calculate the entropy and measure MI by entropy of X, Y and (X, Y).
+Since $I(x; Y)=H(x)+H(y)-H(x, y)$.
 
 ### Wrapper methods (Model-based)
 
