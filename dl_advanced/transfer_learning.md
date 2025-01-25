@@ -8,11 +8,11 @@
 #### Entire finetune
 Unfrozen the all weights and treat weights of the pretrained model as weights initialization.
 
-**Learning Rate Tuning**:
+- **Learning Rate Tuning**:
 Use layer-specific learning rates during finetuning, assigning lower rates to earlier layers and higher rates to later layers. 
 This aligns with the intuition that earlier layers contain general features, while later layers are more task-specific.
 
-**Elastic Weight Consolidation (EWC)**:
+- **Elastic Weight Consolidation (EWC)**:
 Penalize changes to parameters deemed important for the pretrained model’s tasks. 
 This approach helps mitigate catastrophic forgetting, ensuring the model retains its original capabilities while adapting to new tasks.
 
@@ -20,7 +20,7 @@ This approach helps mitigate catastrophic forgetting, ensuring the model retains
 #### Partial finetune
 Unfrozen specific layers (usually the last task head or last several laysers) and only updates theirs weights during the finetuning.
 
-**BitFit**:
+- **BitFit**:
 Only update the bias terms of the pretrained model during finetuning, keeping all other parameters frozen. This method reduces computational overhead significantly while retaining task performance.
 
 
@@ -35,7 +35,7 @@ Add more layers (before/in-between/after) to the pretrained model and only finet
 Examples:
 - Adding task-specific classification heads.
 - Adding domain-specific input reformers/encoders.
-- Integrating adapters within layers. Insert small bottleneck layers (adapters) into each layer of the pretrained model. During finetuning, only the adapter layers are updated, leaving the main model weights untouched.
+- Integrating adapters within layers. such as **Adapter Tunning**, insert small bottleneck layers (adapters) into each layer of the pretrained model. During finetuning, only the adapter layers are updated, leaving the main model weights untouched.
 
 #### Aggregated token
 Add task-specific prefix tokens to the input sequence. 

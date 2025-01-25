@@ -61,5 +61,3 @@ K
 dl/neural_network_basics.md,5/4/54d6f9a4b68ed4361827b5b3bdf5898ccc15725c
 <
 cv/README.md,a/c/ac5dc2da82e81456f892622037206fec18093025
-I
-ml/industrial_guidance.md,3/4/344f0b9ace8e782e35930b5de9ffa349672d35ad

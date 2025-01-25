@@ -42,9 +42,7 @@ reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migr
 - Evaluate split: measure the quality of the split, determine whether split further or stop.
 - Assign label: assign label to the final leaf node.
 
-#### How to split
-
-In brutal force, we calculate all impurity gain of different feature and split combination.
+How to split: In brutal force, we calculate all impurity gain of different feature and split combination.
 
 There are other tricks like:
 - for feature:
@@ -54,9 +52,8 @@ There are other tricks like:
   - use binary search
   - chunklise 
 
-#### Impurity measures
+Impurity measures:
 - Gini score: := $1 - \sum_{i=1}^{C} p_i^2$
-
 - Entropy
 - Missrate
 
@@ -71,6 +68,10 @@ Often on validation set. To reduce model complexity
 - Bagging: Each tree is trained on a different random subset of the data.
 - Random: Random subset of features. (size = $\sqrt(d)$)
 - Voting:  Uses majority voting across trees.
+
+### Advantages of RF
+- resilient to outlier and missing data 
+- robust to overfitting
 
 ### SVM
 reference: 

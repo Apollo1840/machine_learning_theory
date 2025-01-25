@@ -75,6 +75,11 @@ For numerical feature:
 - (more common) use k-th NN to estimate the density hence calculate the entropy and measure MI by entropy of X, Y and (X, Y).
 Since $I(x; Y)=H(x)+H(y)-H(x, y)$.
 
+Advantage of MI as FS:
+- Both numerical and categorical features.
+- Capture non-linear relationship and has no assumption of the distribution.
+- Robust to feature redundance.
+
 ### Wrapper methods (Model-based)
 
 - RFE (needs importance measure)
