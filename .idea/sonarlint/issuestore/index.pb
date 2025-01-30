@@ -29,14 +29,10 @@ F
 ml/model_ensembling.md,7/8/78fea9b0f694b31c15f83d9ebc004c4ea5c1c5ea
 E
 dl_advanced/robust.md,d/4/d4fa730a42af99b9edcf31a9170350c78a0fcd28
-9
-	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
 <
 dl/README.md,e/7/e7f75a9496bcc94d42f8079cc17d03ba5e1f6964
 =
 nlp/README.md,6/4/643f8b74c582769eea3a1fcbed1af9ae12a53821
-<
-re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
 9
 	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
 E
