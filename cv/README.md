@@ -20,7 +20,7 @@
     - 3D Vision
     - Video (see `video.md`)
 
-### Image classification
+### (Core) Image classification
 Task: Assigns a category label to an image.
 
 Representative Methods:
@@ -33,7 +33,7 @@ Representative Methods:
 - ConvNeXt (2022)
 
 
-### Image segmentation
+### (Core) Image segmentation
 a) Semantic Segmentation
 Task: Assigns a class label to each pixel in an image.
 
@@ -54,7 +54,7 @@ Representative Methods:
 
 Others: Image Matting/visual saliency detection
 
-### Image caption
+### (Core) Image caption
 Task: Generates natural language descriptions for images.
 
 Representative Methods:
@@ -64,7 +64,7 @@ Representative Methods:
 - BLIP, BLIP-2 (2022)
 - Flamingo (DeepMind) (2023)
 
-### Visual Question Answering (VQA)
+### (Core) Visual Question Answering (VQA)
 Task: Answers textual questions based on image content.
 
 Representative Methods:
@@ -75,7 +75,7 @@ Representative Methods:
 - PaLI, PaLI-X (2022)
 - LLaVA (Large Language and Vision Assistant) (2023)
 
-### Object detection
+### Extractive - Object detection
 
 Task: Identifies and localizes objects in an image with bounding boxes.
 
@@ -94,7 +94,7 @@ In one-shot object detection, the neural network processes the image in a single
 In two-shot object detection, involves a two-stage process. The first stage generates region proposals. The second stage then classifies these proposals and refines their bounding boxes.
 (Fast R-CNN: First the network scans the image to propose regions that are likely to contain objects. The proposed regions are then cropped and resized, and passed through a network that classifies them and refines the bounding box coordinates.)
 
-### Keypoint detection
+### Extractive - Keypoint detection
 Task: Detects key landmarks (e.g., body joints, face landmarks, hand keypoints).
 
 Representative Methods:
@@ -104,9 +104,9 @@ Representative Methods:
 - PoseFormer (2021)
 
 
-### OCR
+### Extractive - OCR
 
-### Generative Vision Models
+### Generative - Generative Vision Models
 a) Image Generation
 Task: Generates realistic images from noise or text descriptions.
 
@@ -125,7 +125,7 @@ Representative Methods:
 - CycleGAN (2017)
 - AdaIN (Adaptive Instance Normalization) (2017)
 
-### Image Restoration & Super-Resolution 
+### Generative - Image Restoration & Super-Resolution 
 Task: Enhances image quality, resolution, or removes noise.
 
 Representative Methods:
@@ -134,7 +134,7 @@ Representative Methods:
 - ESRGAN (Enhanced Super-Resolution GAN) (2018)
 - SwinIR (2021)
 
-### 3D Vision & Depth Estimation
+### (Hyper-media) 3D Vision & Depth Estimation
 Task: Estimates depth or reconstructs 3D structures from 2D images.
 
 Representative Methods:
@@ -143,7 +143,7 @@ Representative Methods:
 - NeRF (Neural Radiance Fields) (2020)
 - Instant NeRF (2022)
 
-### Video Analysis & Action Recognition
+### (Hyper-media) Video Analysis & Action Recognition
 Task: Detects, classifies, and analyzes human actions in videos.
 
 Representative Methods:
