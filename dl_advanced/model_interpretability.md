@@ -21,8 +21,8 @@ Aim to explain the overall behavior of the model. This involves summarizing gene
 
 - **Model-specific**:
 Tailored to specific architectures (e.g., convolutional neural networks) and can leverage internal structure (like gradients, activations).
-See `CNN interpretablity` in `../cv/cnn.md`.
-
+    - See `CNN interpretablity` in `../cv/cnn.md`.
+    - See `Transformer visualization` in `../transformer/README.md`.
 - **Model-agnostic**:
 Can be applied to any predictive model. They treat the model as a black box and use input–output behavior to infer explanations.
 
