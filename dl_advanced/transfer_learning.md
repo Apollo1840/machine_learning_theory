@@ -1,5 +1,9 @@
 # Transfer learning
 
+## Assumptions
+- **Feature reusability**:  the features(or latent representation) learned from the source domain/task are useful for the target domain/task. Because of the domain relation and task similarity. 
+- **Source dependability**: the source task should have sufficient data and a well-trained model so that the knowledge is valid.
+- **Finetune consistency**: the finetune method ensure the model benefit from the learned feature, and has the ability to adapt to target domain.  
 
 ## Finetune techniques
 

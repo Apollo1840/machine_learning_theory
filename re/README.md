@@ -1,4 +1,8 @@
-# Recommendation engine
+# Recommendation Engine
+The task of Recommendation Engine(RE) is to finding finding most preferable information from a large collection of data.
+
+P.S. It is very similar to the concept of "Retrieval" (see `retrieval.md`).
+
 - Content-based Filtering (recommend similar items)
 - (UI) Collaborative Filtering
 - (UI) Matrix Factorization
