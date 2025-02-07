@@ -34,19 +34,11 @@ E
 =
 nlp/README.md,6/4/643f8b74c582769eea3a1fcbed1af9ae12a53821
 9
-	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
-E
-rl/policy_gradient.md,b/3/b351b2bd7fa3afaffd1cd60f105679070ed0e7fa
-9
 	rl/DQN.md,9/2/9244299144a1b489302e07d7468dce29361fb825
 K
 ml/unsupervised_learning.md,e/9/e999e71104f7ef5a3b55f25b8c6df27f079db660
 =
 ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29
-E
-rl/sarsa_qlearning.md,2/f/2f295b87e9310e5ec139b0ea7f6e195643fb35fa
-<
-rl/README.md,a/5/a555169991d07e55e5952bf3115b588e83bb1cc7
 ;
 rl/mc_td.md,5/2/52fe380dbea7bd69fc4c2da22a4f12e2fca6922c
 C

@@ -14,10 +14,10 @@ The agent learns through receiving **feedback** from its actions within an envir
 
 ## Key concepts:
 
-def. Episode: a series of `(state, action, reward)`.
-
-def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability of taking action $a$ in state $s$, parameterized by $𝜃$ (weights of a neural network, for instance).
-
+- def. Episode: Time period of an agents interacting with environment until termination.
+- def. Trajectory: Series of `(state, action, reward)` pairs collected from one episode, ie. $\{(s_t, a_t, r_t)\}_t$.
+- def. Policy: $𝜋_𝜃(a \mid s)$, which is the probability distribution of action $a$ at state $s$, parameterized by $𝜃$ (weights of a neural network, for instance). 
+  Note that this is **NOT** a probability value of `(s, a)` pair.
 
 ## Category
 From the perspective of the learning schema, reinforcement learning (RL) can be categorized into two types:
@@ -33,8 +33,8 @@ From the perspective of policy interaction with data, reinforcement learning (RL
 - Off-policy RL
 
 ### Online RL
-In online RL, the agent interacts with a **live** environment, where it can query the current reward and the next state based on its actions. 
-During or after experiencing an episode, the model updates its weights and improves its strategy through exploration. 
+In online RL, the agent interacts with a **LIVE** environment, where it can query the current reward and the next state based on its actions. 
+During or after experiencing an **episode**, the model updates its weights and improves its strategy through exploration. 
 The learning process happens iteratively as the agent interacts with the environment. 
 
 Methods:
@@ -43,12 +43,14 @@ Methods:
 - Proximal Policy Optimization (PPO) 
 
 ### Offline RL
-In offline RL, the agent does not interact with a live environment. Instead, it learns from a **fixed** dataset consisting of sequences of `(state, action, reward)` collected beforehand. 
+In offline RL, the agent does not interact with a live environment. 
+Instead, it learns from a **FIXED** dataset consisting of sequences of `(state, action, reward)` collected beforehand. 
 The RL algorithm trains the model solely using this static dataset. 
 This approach is particularly useful in scenarios where environment interactions are costly, dangerous, or impractical. 
 
 Methods:
 - Batch Q-Learning
+- Implicit Q-Learning (IQL) 
 - Conservative Q-Learning (CQL) 
 
 
@@ -59,7 +61,7 @@ In model-based RL, the environment is assumed to behave like a parameterized sto
 and the goal is to learn the parameters of this environment model.
 Once the model of the environment is learned, it can be used to derive the optimal policy, which specifies the best actions to take in each state to achieve a desired outcome.
 
-The environment is often modeled as a Markov Decision Process (MDP), where:
+The environment is often modeled as a Markov Decision Process (**MDP**), where:
 
 - Each state is associated with a reward.
 - The objective is to determine a policy (a sequence of actions over state) that maximizes the expected discounted rewards over time.
@@ -70,9 +72,11 @@ In contrast, model-free RL does not attempt to explicitly model the environment.
 
 Model-free RL methods are further divided into:
 
-- **Value-based methods**: Learn a value function to guide action selection (e.g., Q-Learning).
-- **Policy-based methods**: Directly learn a policy that maps states to actions (e.g., REINFORCE).
-- **Actor-Critic methods**: Combine value-based and policy-based approaches for efficiency and stability.
+- **Value-based methods**: Learn a value function `Q(s, a)` to guide action selection (e.g., Q-Learning).
+- **Policy-based methods**: Directly learn a policy `pi(s)` that maps states to actions (e.g., REINFORCE).
+- **Actor-Critic methods**: Combine value-based and policy-based approaches for efficiency and stability. 
+  Actor corresponds to `pi(s)` and Critic corresponds to `V(s)` which used to estimate advantage (`Q(s, a)-V(s)`) better, 
+  so `pi(s)` can be optimized.
 
 Compared to model-based RL, model-free methods are generally simpler to implement and do not rely on accurate modeling of the environment. However, they often require more data and computational resources to converge to an optimal policy.
 
@@ -90,7 +94,7 @@ Methods:
 ### Off-policy RL
 In off-policy RL, the agent learns using data that may have been collected by a different policy or even a random behavior policy. 
 This allows off-policy methods to reuse historical data, making them more sample-efficient than on-policy methods. 
-The agent evaluates and improves the target policy independently of the behavior policy that generated the data.
+The agent evaluates and improves the **target policy** independently of the **behavior policy** that generated the data.
 This flexibility makes off-policy RL more versatile but can lead to challenges like stability issues and the need for careful exploration-exploitation balancing. 
 
 Methods:

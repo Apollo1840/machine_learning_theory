@@ -1,12 +1,18 @@
 # Policy Gradient
 
-reference: https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
+reference:
+- (openAI definition) https://spinningup.openai.com/en/latest/algorithms/vpg.html
+- (theory with implementation) https://chatgpt.com/share/6745e845-f458-8009-a645-4d812e2a88ac
+- (implementation of Vanilla AC): https://github.com/jihoonerd/actor-critic/tree/main
+
 
 ---
 
 Policy Gradient is a method direct learn the policy function - $𝜋_𝜃(a \mid s)$. 
 
-So it could also be called $\pi$-learning regarding Q-learning is to learn the `Q(s, a)` table. 
+So it could also be called $\pi$-learning, considering Q-learning is to learn the `Q(s, a)` table. 
+
+It belongs to **on-line, model-free, on-policy** category of RL.
 
 ## Objective:
 
@@ -31,7 +37,7 @@ Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $�
 
 
 $$
-\nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
+\nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}, t} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
 $$
 
 
@@ -78,11 +84,12 @@ Introduces the advantage function $A(s, a) = Q(s, a) - V(s)$ to improve stabilit
 $$
 \nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)
 $$
+.
 
 Since
 
 $$
- Q(s_t, a_t) = r_t + \gamma V(s_{t+1})
+ Q(s_t, a_t) \approx r_t + \gamma V(s_{t+1})
 $$
 
 $$
