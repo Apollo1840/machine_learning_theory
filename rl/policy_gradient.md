@@ -98,7 +98,7 @@ Note that, the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated.
 
 Different PG methods has their own way to estimate $\nabla_{𝜃} J(𝜃)$, such as:
 - (REINFORCE) $\nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t$
-- (AC) $\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)$
+- (AC) $\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s)\[Q(s, a)-v(s)\]$
 
 
 ## Methods
@@ -111,7 +111,7 @@ $$
 \nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t
 $$
 
-For each episode, we will record the whole episode and calculate the discounted rewards ($G_t$, also called rewards-on-go) for each $t$,
+For each episode, we will record the whole episode and calculate the discounted rewards ($G_t$, also called rewards-to-go) for each $t$,
 as well as the dependent variable $\pi_{𝜃}(a_t \mid s_t)$, $a_t$ is the action with highest probability:
 
 $$
@@ -141,7 +141,7 @@ $$
 
 We will only need to find a proper estimate of $V$ as $V_{\phi}$.
 
-Loss of $V_\phi$:
+Here we take TD method for estimating V(s) as example, Loss of $V_\phi$:
 
 $$
 {{\delta}\_{t \| \phi}}^2 = \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
@@ -153,4 +153,6 @@ as well as $\pi_{𝜃}(a_t \mid s_t)$:
 $$
  \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t, {{\delta}\_{t \| \phi}}^2 \})
 $$
+
+(P.S OpenAI name MC methods for Critic estimate as Vanilla AC method, see: https://spinningup.openai.com/en/latest/algorithms/vpg.html).
 
