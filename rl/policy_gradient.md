@@ -18,75 +18,14 @@ It belongs to **on-line, model-free, on-policy** category of RL.
 
 ### $𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} 𝜋_𝜃(a_t \mid s_t)$
 
-### Policy Representation
-
-The policy \( \pi_\theta(a \mid s) \) is defined as the probability of taking action \( a \) given state \( s \), and it is parameterized by \( \theta \).
-
-### Neural Network Modeling
-
-A common approach is to define a function
-\[
-f_\theta(s) = \hat{a},
-\]
-where \( \hat{a} \) is a vector representing a probability distribution over actions. In other words, the neural network parameterized by \( \theta \) outputs a probability distribution from which an action is sampled.
-
-
-
-### Action Selection
-
-Given a state \( s_t \), the network produces
-\[
-\hat{a_t} = f_\theta(s_t),
-\]
-which is a probability distribution over possible actions. If the action \( a_t \) is represented as a one-hot vector, the probability of selecting \( a_t \) is given by
-\[
-\pi_\theta(a_t \mid s_t) = a_t^\top \hat{a_t},
-\]
-resulting in a scalar probability.
-
-
-### Gradient of the Log-Probability
-
-In policy gradient methods, it is common to work with the gradient of the log-probability:
-\[
-\nabla_\theta \log \pi_\theta(a_t \mid s_t).
-\]
-This gradient has the same shape as \( \theta \) and is essential for updating the policy parameters.
-
-
-### Discrete Example
-
-Consider a simple discrete case where the policy is modeled as:
-\[
-f_\theta(s_t) = \operatorname{Softmax}(\theta s_t),
-\]
-with \( \theta \) being an \( M \times N \) matrix (assuming \( M \) actions and \( s_t \in \mathbb{R}^N \)). Here, the output \( \hat{a_t} \) is obtained by applying the softmax function to \( \theta s_t \).
-
-For a one-hot encoded action \( a_t \), the gradient of the log-probability is given by:
-\[
-\nabla_\theta \log \pi_\theta(a_t \mid s_t) = (a_t - \hat{a_t}) \otimes s_t,
-\]
-where the outer product \( \otimes \) ensures that for each action \( i \) (i.e., each row of \( \theta \)), the gradient is:
-\[
-\nabla_{\theta_i} \log \pi_\theta(a_t \mid s_t) = \bigl(a_t(i) - \hat{a_t}(i)\bigr) s_t.
-\]
-
-
-### Continuous Case
-
-In continuous control problems, the policy \( \pi_\theta(a \mid s) \) is often modeled using a probability distribution over continuous actions (for example, a Gaussian distribution). In this case, the neural network outputs the parameters (e.g., mean and variance) of the distribution, and similar gradient computations apply in order to update \( \theta \).
-
----
-
 $𝜋_𝜃(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
 and we can use an neuro network to model $f_{\theta}$.
 Give $s_t$, we can calculate $\hat{a_t}$ (a probability distribution), 
 that the chosen action $a_t$ is typically sampled from. 
 
-$𝜋_𝜃(a_t \mid s_t)$ is a scalar, representing the probability of choosing $a_t$ responding $s_t$.
+$𝜋_𝜃(a_t \mid s_t)$ is a scalar (eg. one-hot vector $a_t^{T}$ times probability distribution $\hat{a_t}$.
+), representing the probability of choosing $a_t$ responding $s_t$.
 So $\nabla_{𝜃} 𝜋_𝜃(a_t \mid s_t)$ is a same shape variable of $\theta$, 
-
-For example, one-hot vector $a_t^{T}$ times probability distribution $\hat{a_t}$.
 
 Lets make a trival discrete example:
 
