@@ -29,9 +29,8 @@ So $\nabla_{𝜃} 𝜋_𝜃(a_t \mid s_t)$ is a same shape variable of $\theta$,
 
 Lets make a trival discrete example:
 
-$f_{\theta}(s_t) = Softmax(\theta * s_t)$ where $\theta$ is a M*N matrix.
-
-Then the $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t) =  (a_t - \hat{a_t}) \otimes s_t $, where $a_t$ is the one-hot vector.
+    $f_{\theta}(s_t) = Softmax(\theta * s_t)$ where $\theta$ is a M*N matrix.
+    Then the $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t) =  (a_t - \hat{a_t}) \otimes s_t $, where $a_t$ is the one-hot vector.
 
 In continous (control) example, a probabilitical model is often trained.
 
