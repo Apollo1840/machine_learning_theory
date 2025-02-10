@@ -16,7 +16,7 @@ It belongs to **on-line, model-free, on-policy** category of RL.
 
 ## Prequisities
 
-### Policy and Policy gradient: $𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t)$
+### Policy and Policy gradient($𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t))$
 
 $𝜋_𝜃(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
 and we can use an neuro network to model $f_{\theta}$.
@@ -37,8 +37,19 @@ Then the $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t) =  (a_t - \hat{a_t}) \otime
 
 In continous (control) example, a probabilitical model is often trained.
 
+### General PG process
 
-## Objective:
+In PG method, we will modeling the **Policy function**. 
+
+We will run one episode or a batch of episodes based on current policy, 
+to collect one or a batch of **Trajectories**.
+From those trajectories, we could calculate the **Gradient** for updating the policy function.
+
+Typically, we end the loop after several rounds.
+
+## Theory
+
+### Objective:
 
 The goal is to find proper $\theta$ in $𝜋_𝜃(a \mid s)$ via maximizing the **expected cumulative reward** $J(𝜃)$, defined as:
 
@@ -55,7 +66,7 @@ $$
 - $\gamma$: discount factor.
 
 
-## Update Rule:
+### Update Rule:
 
 Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $𝜃$ is:
 
@@ -79,10 +90,18 @@ $$
 
 - $\alpha$: learning rate.
 
-Note: the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated. 
 
 
-## Estimate the gradient:
+### Estimate the gradient:
+
+Note that, the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated. 
+
+Different PG methods has their own way to estimate $\nabla_{𝜃} J(𝜃)$, such as:
+- (REINFORCE) $ \nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t $
+- (AC) $ \nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)$
+
+
+## Methods
 
 ### 1. REINFORCE Algorithm:
 
@@ -117,7 +136,7 @@ $$
 $$
 
 $$
-{\delta}\_t = A(s_t, a_t) = r_t + \gamma V(s_{t+1}) - V(s_{t})
+{\delta}\_t := A(s_t, a_t) = r_t + \gamma V(s_{t+1}) - V(s_{t})
 $$
 
 We will only need to find a proper estimate of $V$ as $V_{\phi}$.
