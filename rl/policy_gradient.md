@@ -155,3 +155,16 @@ $$
 
 (P.S OpenAI name MC methods for Critic estimate as Vanilla PG (VPG) method, see: https://spinningup.openai.com/en/latest/algorithms/vpg.html).
 
+### 3. GRPO
+
+Same as AC methods, Introduces the advantage function $A(s, a)$:
+
+$$
+\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)
+$$
+
+However, we do not use $Q(s, a) - V(s)$ to quantify A(s, a), instead we use group relative advantage 
+to estimate A(s, a). i.e we adapt several actions simultaneously in a group and based on their different rewards-to-go, based on
+calculate the relative advantage as advance score (scaled difference over average). 
+
+And in GRPO, the update limitation trick from PPO method (see `ppo.md`) is also used.
