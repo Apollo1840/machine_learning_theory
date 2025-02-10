@@ -21,17 +21,18 @@ It belongs to **on-line, model-free, on-policy** category of RL.
 $𝜋_𝜃(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
 and we can use an neuro network to model $f_{\theta}$.
 Give $s_t$, we can calculate $\hat{a_t}$ (a probability distribution), 
-that the chosen action $a_t$ is typically sampled from. 
+from which the chosen action $a_t$ is typically sampled. 
 
 $𝜋_𝜃(a_t \mid s_t)$ is a scalar (eg. one-hot vector $a_t^{T}$ times probability distribution $\hat{a_t}$.
 ), representing the probability of choosing $a_t$ responding $s_t$.
-So $\nabla_{𝜃} 𝜋_𝜃(a_t \mid s_t)$ is a same shape variable of $\theta$, 
+So $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t)$ is a same shape variable of $\theta$, 
 
 #### Examples
 
 First, let's make a trival discrete example:
 
 $f_{\theta}(s_t) = Softmax(\theta * s_t)$ where $\theta$ is a M*N matrix.
+
 Then the $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t) =  (a_t - \hat{a_t}) \otimes s_t $, where $a_t$ is the one-hot vector.
 
 In continous (control) example, a probabilitical model is often trained.
