@@ -16,7 +16,7 @@ It belongs to **on-line, model-free, on-policy** category of RL.
 
 ## Prequisities
 
-### Policy and Policy gradient($𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t))$
+### Policy and Policy gradient ($𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t))$
 
 $𝜋_𝜃(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
 and we can use an neuro network to model $f_{\theta}$.
@@ -97,8 +97,8 @@ $$
 Note that, the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated. 
 
 Different PG methods has their own way to estimate $\nabla_{𝜃} J(𝜃)$, such as:
-- (REINFORCE) $ \nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t $
-- (AC) $ \nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)$
+- (REINFORCE) $\nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t$
+- (AC) $\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)$
 
 
 ## Methods
