@@ -12,8 +12,7 @@ Policy Gradient is a method direct learn the policy function - $𝜋_𝜃(a \mid
 
 So it could also be called $\pi$-learning, considering Q-learning is to learn the `Q(s, a)` table. 
 
-It belongs to **on-line, model-free, on-policy** category of RL.
-
+It belongs to **on-line, model-free, on-policy** category of RL. And the state space and action space are **infinite**.
 ## Prequisities
 
 ### Policy and Policy gradient ($𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t))$
@@ -141,7 +140,7 @@ $$
 
 We will only need to find a proper estimate of $V$ as $V_{\phi}$.
 
-Here we take TD method for estimating V(s) as example, Loss of $V_\phi$:
+Here we take TD method(see `mc_td.md` for more details) for estimating V(s) as example, loss of $V_\phi$:
 
 $$
 {{\delta}\_{t \| \phi}}^2 = \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
@@ -154,5 +153,5 @@ $$
  \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t, {{\delta}\_{t \| \phi}}^2 \})
 $$
 
-(P.S OpenAI name MC methods for Critic estimate as Vanilla AC method, see: https://spinningup.openai.com/en/latest/algorithms/vpg.html).
+(P.S OpenAI name MC methods for Critic estimate as Vanilla PG (VPG) method, see: https://spinningup.openai.com/en/latest/algorithms/vpg.html).
 

@@ -12,14 +12,16 @@
 #### Entire finetune
 Unfrozen the all weights and treat weights of the pretrained model as weights initialization.
 
+- **Cautious Updating**:
+  Prevent the catastrophical change of the model parameters. For example, we can use KL divergence to constraint the parameter changes.
+  
 - **Learning Rate Tuning**:
 Use layer-specific learning rates during finetuning, assigning lower rates to earlier layers and higher rates to later layers. 
 This aligns with the intuition that earlier layers contain general features, while later layers are more task-specific.
-
+  
 - **Elastic Weight Consolidation (EWC)**:
-Penalize changes to parameters deemed important for the pretrained model’s tasks. 
-This approach helps mitigate catastrophic forgetting, ensuring the model retains its original capabilities while adapting to new tasks.
-
+Penalize changes to parameters deemed important (Fisher-Information matrix) for the pretrained model’s tasks. 
+This approach helps mitigate catastrophic forgetting, ensuring the model retains its original capabilities while adapting to new tasks. 
 
 #### Partial finetune
 Unfrozen specific layers (usually the last task head or last several laysers) and only updates theirs weights during the finetuning.

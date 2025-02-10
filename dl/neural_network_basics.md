@@ -1,15 +1,50 @@
 # Neural Network Basics
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28ML.one%7Ce8b3e705-493c-431b-b04e-8e9e3752864d%2F07-NeuroNetwork%7C02a354b1-68be-4afe-ac68-241c18b29aab%2F%29&wdorigin=NavigationUrl
 
+## Task head
 
+- regression:
+  - Vanilla: for regression, probablistic regression.
+  - ReLU and Softplus: positive regression.
+- classification:
+  - Softmax: single-label probability distribution, normalize **logits** to get values between 0 and 1.
+  - Sigmoid: multi-label probability distribution.
+
+  
 ## Losses
 - mse
 - entropy
     - binary cross-entropy
     - categorical cross-entropy
+- Negative Log-Likelihood Loss (nll)
 - focal loss
 - triplenet loss
 - similarity loss
+- KL divergence
+
+### KL divergence
+
+Kullback-Leibler (KL) divergence is a measure of how one probability distribution P differs from a second probability distribution Q.
+It quantifies the information loss when Q is used to approximate P. KL divergence is asymmetric and is defined as:
+
+$$
+D_{KL}(P \| Q) = \sum_{x} P(x) \log \frac{P(x)}{Q(x)}
+$$
+
+$$
+D_{KL}(P \| Q) = \int p(x) \log \frac{p(x)}{q(x)} dx
+$$
+
+### NLL loss
+
+```python
+
+def gaussian_nll_loss(y_pred, y_true):
+    mean, logvar = y_pred  # Model outputs mean and log-variance
+    var = torch.exp(logvar)  # Convert log-variance to variance
+    return torch.mean(0.5 * (logvar + (y_true - mean) ** 2 / var))  # NLL loss
+
+```
 
 ## Optimizers
 

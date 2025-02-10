@@ -41,11 +41,5 @@ K
 ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29
 C
 dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
-D
-dl/regularization.md,c/c/cce1efa06904fad34d480fb2ea03fdd087cb95c1
-K
-dl/neural_network_basics.md,5/4/54d6f9a4b68ed4361827b5b3bdf5898ccc15725c
 <
 re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
-P
- dl_advanced/transfer_learning.md,c/e/cecf0c89e57d14b77ea9cb43f6649d983b310500
