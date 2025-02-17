@@ -53,8 +53,6 @@ E
 transformer/README.md,0/3/035d7f24fb4f6b51aaad728e1ccecfb21c1eab76
 J
 ml/00_statistics_for_ml.md,0/4/04f008f849e77532e27af48b91cb76dee695393c
-R
-"dl_advanced/multi_task_learning.md,a/d/adceb770e5d9e6e45fdd886e70dbb8f4cb247467
 N
 transformer/attention_in_nn.md,e/7/e7a4acb1d276c567ca8dba1b367382ba4f177ba4
 <

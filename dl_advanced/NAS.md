@@ -15,22 +15,45 @@
 
 #### References:
 - Review: https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9504890
-- EIC: https://arxiv.org/pdf/1703.01041
-- NEAT: https://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf
-- HyperNEAT: https://www.researchgate.net/publication/23986881_A_Hypercube-Based_Encoding_for_Evolving_Large-Scale_Neural_Networks
 - DeepHyperNEAT: 
 - HyperNEAT ++: 
-- Growth-based Evolutionary Neural Architecture Search:
-- Evolutionary Neural Architecture Search with Generative Pre-Trained Model:
+- Growth-based Evolutionary Neural Architecture Search: https://arxiv.org/pdf/2403.02667
+- Evolutionary Neural Architecture Search with Generative Pre-Trained Model: https://arxiv.org/pdf/2305.05351
 
 #### Introduction
-Also called EvoNAS. Focusing on apply Evolution algorithms to search for best Neural network architecture.
+Also called **E-NAS/EvoNAS**. Focusing on apply Evolution algorithms to search for best Neural network architecture.
 
-**Large-Scale Evolution of Image Classifiers**: 
+NEAT(https://nn.cs.utexas.edu/downloads/papers/stanley.ec02.pdf) is foundation work searching the best vanilla NN archittecture.  
+In NEAT, a complex network is evolved from a single cell and NN is encoded by so-called graph-encoding, 
+which consists of nodes gene(list) and connection gene(adj-matrix).
 
-With complete design of gene, cross-over and mutation.
-Focus on the mutation to search for optimal architecture. 
+In NEAT, units and connections are searched simultaneously, but other (following) works focus on one of them:
+- \# layers and layers' hyper-parameters
+- connections
 
+In NEAT, model architecture is directly encoded and evoluaion process is trivial, but other (following) works focus on one of them:
+- Encoding: 
+  - direct: list presentation / hierarchical representation 
+  - in-direct: HyperNEAT(https://www.researchgate.net/publication/23986881_A_Hypercube-Based_Encoding_for_Evolving_Large-Scale_Neural_Networks
+)
+- evoluaion process:
+  - layer-wise swapping
+  - aging as regularization
+  - mutation-only (EIC: https://arxiv.org/pdf/1703.01041)
+
+**EIC: Large-Scale Evolution of Image Classifiers**: 
+
+With complete design of gene and mutation. 
+Only mutation was considered to reproduce new individuals.
+
+A major challenge of ENAS is speed. Methods to speed-up the optimization are:
+- proxy (a fast train/infer model to evaluate architecture)
+- inheritance (weights inheritance)
+- one-shot (use superNet as mother body)
+- cell search (only search the building blocks)
+
+Another challenge is to enlarge the Search Space of the ENAS, works like (https://arxiv.org/pdf/2011.10904)
+explored this topic.
 
 ### NAS by RL
 
