@@ -1,10 +1,7 @@
 # Model efficiency
 
 ## Model structual optimization
-NAS with combined target.
-- DARTS, based on differential.
-- NASNet, based on RL.
-- EfficientNet, combined with joint strategy.
+NAS with combined target. for NAS, see `NAS.md` for details.
 
 ## Model compression
 - Prune & L1 regularization

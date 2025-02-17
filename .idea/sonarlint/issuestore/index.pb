@@ -1,14 +1,10 @@
 
 H
 genAI/diffusion_model.md,1/4/142c321d8fb0a761f769e0c6b1dacc8ac177d213
-Q
-!dl_advanced/model_distillation.md,d/c/dc1682869ba32bf2c104a41ca5c66d8829c2bf67
 =
 eai/README.md,3/9/393eb591b6746b174f5573b76a4205f2d2256dfe
 >
 llm/chatGPT.md,1/9/199415a830a381d0f8ce9d81dfde833db573f4c9
-O
-dl_advanced/model_efficiency.md,f/d/fd8cad4f59bad1cbbf146fdd73aaed73078d99e3
 :
 
 cv/unet.md,5/4/5442c93197f506fef4da5d6cbe96ac46737b5924
@@ -43,3 +39,33 @@ C
 dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
 <
 re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
+U
+%dl_advanced/model_interpretability.md,d/7/d718b3f4088da71b96c5ff357caf3aae57bf5b7d
+S
+#dl_advanced/contrastive_learning.md,b/1/b1e82b04e35e9ae154bb7041ac3c07374f583598
+A
+cv/cnn_advance.md,3/6/36bbdf971474f7922e7173acb40e171ece2698e9
+P
+ ml/00_data_engineering_for_ml.md,6/5/65b41a4725b0f61534d04c0a095d170cb0fb6e16
+=
+llm/README.md,b/e/be7587366ee143f27824db32dde983a5853709c2
+E
+transformer/README.md,0/3/035d7f24fb4f6b51aaad728e1ccecfb21c1eab76
+J
+ml/00_statistics_for_ml.md,0/4/04f008f849e77532e27af48b91cb76dee695393c
+R
+"dl_advanced/multi_task_learning.md,a/d/adceb770e5d9e6e45fdd886e70dbb8f4cb247467
+N
+transformer/attention_in_nn.md,e/7/e7a4acb1d276c567ca8dba1b367382ba4f177ba4
+<
+ml/README.md,7/1/71cdd46eb10d1fd191d13e79bbb8052934abb854
+B
+ai_agent/README.md,8/9/892f9be820b1af155df8eaf33a9253de1f0eb023
+9
+	cv/cnn.md,1/c/1c9eb4b5aea58da7ccd970681103e8611d8ae064
+?
+re/retrieval.md,6/e/6e1d797f470a617a78a466e5eed5aa2e4639c6a1
+R
+"transformer/positional_encoding.md,6/9/69b6bf014a774bb68655a651a7be1c8044fb29d3
+9
+	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
