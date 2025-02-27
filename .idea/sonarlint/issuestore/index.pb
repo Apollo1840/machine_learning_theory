@@ -35,8 +35,6 @@ K
 ml/unsupervised_learning.md,e/9/e999e71104f7ef5a3b55f25b8c6df27f079db660
 =
 ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29
-C
-dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
 <
 re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
 U
