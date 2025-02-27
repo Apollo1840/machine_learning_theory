@@ -25,8 +25,6 @@ F
 ml/model_ensembling.md,7/8/78fea9b0f694b31c15f83d9ebc004c4ea5c1c5ea
 E
 dl_advanced/robust.md,d/4/d4fa730a42af99b9edcf31a9170350c78a0fcd28
-<
-dl/README.md,e/7/e7f75a9496bcc94d42f8079cc17d03ba5e1f6964
 =
 nlp/README.md,6/4/643f8b74c582769eea3a1fcbed1af9ae12a53821
 9
@@ -39,8 +37,6 @@ K
 re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
 U
 %dl_advanced/model_interpretability.md,d/7/d718b3f4088da71b96c5ff357caf3aae57bf5b7d
-S
-#dl_advanced/contrastive_learning.md,b/1/b1e82b04e35e9ae154bb7041ac3c07374f583598
 A
 cv/cnn_advance.md,3/6/36bbdf971474f7922e7173acb40e171ece2698e9
 P

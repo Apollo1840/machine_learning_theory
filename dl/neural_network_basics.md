@@ -17,19 +17,27 @@ It allows the model to bypass one or more layers by feeding the output of one la
 - classification:
   - Softmax: single-label probability distribution, normalize **logits** to get values between 0 and 1.
   - Sigmoid: multi-label probability distribution.
+- generation: Introduced in specific fields.
 
   
 ## Losses
-- mse
-- entropy
-    - binary cross-entropy
-    - categorical cross-entropy
-- Negative Log-Likelihood Loss (nll)
-- focal loss
-- triplenet loss
-- similarity loss
-- KL divergence
+- MSE
+- Entropy
+    - cross-entropy (CE)
+      - binary cross-entropy
+      - categorical cross-entropy
+    - Negative Log-Likelihood Loss (NLL)
+    - focal loss 
+- Alignment loss
+  - distance-based
+      - siamese contrastive loss
+      - triplenet loss
+  - softmax similarity-based
+    - InfoNCE Loss
+    - NT-Xent Loss
+  - KL divergence
 
+### Entropy loss
 
 ### NLL loss
 
@@ -54,7 +62,34 @@ def gaussian_nll_loss(y_pred, y_true):
 
 ```
 
-### KL divergence
+
+#### Focal loss
+
+Focus more on less-presented and miss-classified samples.
+Often used in imbalanced classification cases.
+
+$$
+FL(p_t) = -\alpha_t (1 - p_t)^\gamma \log(p_t)
+$$
+
+### Alignment loss
+
+#### InfoNCE
+Push the prefect matching between `q` and the correct `k0`.
+
+$$
+\mathcal{L}\_{\text{InfoNCE}} = -\log \frac{\exp (q \cdot k_0 / \tau)}{\sum_{i=0}^{N} \exp (q \cdot k_i / \tau)}
+$$
+
+Generalization of InfoNCE if the target is a similiarity matrix:
+
+$$
+\mathcal{L}\_{\text{img2txt}} = - \frac{1}{N} \sum_{i=1}^{N} \log \frac{\exp (S_{ii} / \tau)}{\sum_{j=1}^{N} \exp (S_{ij} / \tau)}
+$$
+
+`S_ij` is the similarity between the image and all text embeddings in the batch.
+
+#### KL divergence
 
 Kullback-Leibler (KL) divergence is a measure of how one probability distribution P differs from a second probability distribution Q.
 It quantifies the information loss when Q is used to approximate P. 
@@ -79,7 +114,9 @@ P.S. Related to Jensen-Shannon Divergence (JSD)
 ## Optimizers
 
 ### Adam
-When using Adam, we will keep the momentum of the gradient(u) and the momentum of the gradient square(v).
+When using Adam, we will keep the:
+- u: momentum of the **gradient** and 
+- v: momentum of the **gradient square**.
 
 Instead of using the gradient, Adam used u and the u is scaled by the square root of v.
 
