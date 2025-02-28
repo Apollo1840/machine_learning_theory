@@ -168,3 +168,9 @@ to avoid them, we can use:
 Randomly deactivate a fraction of neurons of a layer whenever tensor pass forward during the training phase.
 
 It prevents the network from becoming overly reliant on specific neurons, thus promoting the learning of more robust and general features and reducing overfitting.
+
+### Special Nets
+- cnn, see `../cv/cnn.md`.
+- rnn, see `../nlp/rnn.md`.
+- gnn, see `./gnn.md`.
+- transformer `../transformer/README.md`
