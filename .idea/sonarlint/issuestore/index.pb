@@ -61,3 +61,29 @@ R
 "transformer/positional_encoding.md,6/9/69b6bf014a774bb68655a651a7be1c8044fb29d3
 9
 	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
+B
+dl_advanced/NAS.md,4/9/498f0a438727509938f4caf299b2698a10afb3dd
+P
+ dl_advanced/transfer_learning.md,c/e/cecf0c89e57d14b77ea9cb43f6649d983b310500
+<
+dl/README.md,e/7/e7f75a9496bcc94d42f8079cc17d03ba5e1f6964
+<
+rl/README.md,a/5/a555169991d07e55e5952bf3115b588e83bb1cc7
+;
+rl/mc_td.md,5/2/52fe380dbea7bd69fc4c2da22a4f12e2fca6922c
+E
+rl/sarsa_qlearning.md,2/f/2f295b87e9310e5ec139b0ea7f6e195643fb35fa
+C
+dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
+S
+#dl_advanced/contrastive_learning.md,b/1/b1e82b04e35e9ae154bb7041ac3c07374f583598
+D
+dl/regularization.md,c/c/cce1efa06904fad34d480fb2ea03fdd087cb95c1
+K
+dl/neural_network_basics.md,5/4/54d6f9a4b68ed4361827b5b3bdf5898ccc15725c
+9
+	dl/gnn.md,0/d/0dfdb27de48179212987aa50b6681b5650909e0e
+O
+dl_advanced/normalizing_flow.md,e/d/ed227072a1752040172d2ce585b6834a545e00de
+T
+$dl_advanced/latent_space_learning.md,6/d/6d65195b24f93211cf8f7c3dcbd21752010e01bc
