@@ -49,8 +49,6 @@ J
 ml/00_statistics_for_ml.md,0/4/04f008f849e77532e27af48b91cb76dee695393c
 N
 transformer/attention_in_nn.md,e/7/e7a4acb1d276c567ca8dba1b367382ba4f177ba4
-<
-ml/README.md,7/1/71cdd46eb10d1fd191d13e79bbb8052934abb854
 B
 ai_agent/README.md,8/9/892f9be820b1af155df8eaf33a9253de1f0eb023
 9
@@ -67,23 +65,3 @@ P
  dl_advanced/transfer_learning.md,c/e/cecf0c89e57d14b77ea9cb43f6649d983b310500
 <
 dl/README.md,e/7/e7f75a9496bcc94d42f8079cc17d03ba5e1f6964
-<
-rl/README.md,a/5/a555169991d07e55e5952bf3115b588e83bb1cc7
-;
-rl/mc_td.md,5/2/52fe380dbea7bd69fc4c2da22a4f12e2fca6922c
-E
-rl/sarsa_qlearning.md,2/f/2f295b87e9310e5ec139b0ea7f6e195643fb35fa
-C
-dl/prerequisties.md,7/0/7002a027dd23170ca6168c8d4d160a0fb1159380
-S
-#dl_advanced/contrastive_learning.md,b/1/b1e82b04e35e9ae154bb7041ac3c07374f583598
-D
-dl/regularization.md,c/c/cce1efa06904fad34d480fb2ea03fdd087cb95c1
-K
-dl/neural_network_basics.md,5/4/54d6f9a4b68ed4361827b5b3bdf5898ccc15725c
-9
-	dl/gnn.md,0/d/0dfdb27de48179212987aa50b6681b5650909e0e
-O
-dl_advanced/normalizing_flow.md,e/d/ed227072a1752040172d2ce585b6834a545e00de
-T
-$dl_advanced/latent_space_learning.md,6/d/6d65195b24f93211cf8f7c3dcbd21752010e01bc

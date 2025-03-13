@@ -5,22 +5,19 @@ references:
 
 Feature selection is selecting a subset of relevant features (variables, predictors) for use in model construction.
 
-It can help reduce training costs and overfitting. Additionally, it simplifies the model and enhances its interpretability.
-In some cases, feature selection is necessary to avoid curse of dimensionality.
-
 ## Why feature selection
 
-- Lower (computation) cost
-- Prevent overfitting
-- Improve interpretablity
-- Avoids Curse of Dimensionality (Fail to learn & Distance-failed)
+- Lower (computation: training/working) cost
+- Reduce overfitting
+- Emplifies model hence improve interpretablity
+- Avoids Curse of Dimensionality(CoD) (Fail to learn & Distance-failed)
 
 
 ## How feature selection
 
 Strategy: 
 - If you have a large number of features (e.g., high-dimensional data) → Filter methods (e.g., Mutual Information, PCA)
-- If computational cost is not a concern and you need high accuracy → Wrapper methods (e.g., RFE, SFS)
+- If computational cost is not a concern and you need high accuracy → Wrapper methods (e.g., RFE, SeqFS)
 - If using tree-based models → Embedded methods (e.g., Feature importance from Random Forest, XGBoost)
 - If using deep learning models → SHAP
 
@@ -41,17 +38,24 @@ Strategy:
 - **N**umerical vs **C**ategorical (N vs C): t-test, ANOVA
 - **C**ategorical vs **C**ategorical(C vs C): Chi-Square test, Mutual information 
 
+#### N -> N
 
-#### Correlation based
+**Correlation based**:
+
 Drawback: can capture linear relation only.
 
-#### t-test to ANOVA
+#### N -> C
+
+**t-test to f-test**:
+
 ANOVA has the same purpose as t-test, but designed for more than two factors and methodolgically based on f-test.
 
-(Ps. f-test can be understood as variance ratio test)
+(Ps. f-test can be understood as variance ratio test; ANOVA is a method that uses the F-test to compare the means of multiple groups)
 
-#### Chi-Square test
-categorical vs categorical:
+#### C -> C
+
+**Chi-Square test**:
+
 1. draw a crosstab
 2. calculate expectation table (assume non-relation)
 3. use chi-square test
@@ -60,9 +64,12 @@ categorical vs categorical:
 
 For numerical feature: discretization via creating bins.
 
-#### Mutual information
+**Mutual information(MI)**:
 
 MI measures the reduction in uncertainty about Y given knowledge of X.
+Or amount of shared information between X and Y.
+
+MI = KL(P(x,y)||P(x)P(y)):
 
 $$
 I(X; Y) = \sum_{x \in X} \sum_{y \in Y} P(x, y) \log \left( \frac{P(x, y)}{P(x) P(y)} \right)
@@ -72,33 +79,36 @@ $$
 
 For numerical feature: 
 - discretization via creating bins.
-- (more common) use k-th NN to estimate the density hence calculate the entropy and measure MI by entropy of X, Y and (X, Y).
+- (more common) use k-th NN to estimate the entropy and measure MI by entropy of X, Y and (X, Y).
 Since $I(x; Y)=H(x)+H(y)-H(x, y)$.
 
 Advantage of MI as FS:
 - Both numerical and categorical features.
 - Capture non-linear relationship and has no assumption of the distribution.
-- Robust to feature redundance.
+- (variant mRMR is robust to feature redundance).
 
 ### Wrapper methods (Model-based)
 
-- RFE (needs importance measure)
-- SeqFS: SFS-Backwards/SFS-Forwards/BiSFS
+- Random feature elimination (RFE) (needs importance measure)
+- Sequential feature selection (SeqFS)
+  - SFS-Backwards 
+  - SFS-Forwards
+  - BiFS
 - GA
 - Lasso regression
 
 Feature importance:
 - Coefficients in linear alike model. (such as linear regression, SVM)
-- Mean Decrease in Impurity (**MDI**): Decrease of Gini score in DT.
 - Mean Decrease in Accuracy (**MDA**): After randomly shuffled THE feature of inputs.
+- Mean Decrease in Impurity (**MDI**): Decrease of Gini score in DT.
 
-#### Random forest
+#### in Random forest
 
 DT: Impurity decrease is **weighted** by number of points in each decision node.
 
 RF: Importance is **sumed** upon all decision trees. 
 
-#### Neural Net
+#### in Neural Net
 
 SHAP: 
 SHAP value measures how feature contributes to certain output (by removing that feature). 
