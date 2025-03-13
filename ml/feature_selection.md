@@ -82,10 +82,16 @@ For numerical feature:
 - (more common) use k-th NN to estimate the entropy and measure MI by entropy of X, Y and (X, Y).
 Since $I(x; Y)=H(x)+H(y)-H(x, y)$.
 
-Advantage of MI as FS:
-- Both numerical and categorical features.
-- Capture non-linear relationship and has no assumption of the distribution.
-- (variant mRMR is robust to feature redundance).
+Comments:
+
+- Advantage of MI as FS:
+  - Both numerical and categorical features.
+  - Capture non-linear relationship and has no assumption of the distribution.
+  - (variant mRMR is robust to feature redundance).
+- Dissadvantage of MI as FS:
+  - Since it  has no assumption of the distribution, it is prune to
+    - noisy random dependency
+    - high cardinality feature, because more likely to have noisy dependency
 
 ### Wrapper methods (Model-based)
 
@@ -95,12 +101,15 @@ Advantage of MI as FS:
   - SFS-Forwards
   - BiFS
 - GA
-- Lasso regression
+- Lasso regression(L1)
+
 
 Feature importance:
 - Coefficients in linear alike model. (such as linear regression, SVM)
 - Mean Decrease in Accuracy (**MDA**): After randomly shuffled THE feature of inputs.
 - Mean Decrease in Impurity (**MDI**): Decrease of Gini score in DT.
+
+(P.S wrapper methods are robust to redundant features)
 
 #### in Random forest
 

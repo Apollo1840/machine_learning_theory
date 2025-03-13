@@ -31,8 +31,6 @@ E
 	rl/DQN.md,9/2/9244299144a1b489302e07d7468dce29361fb825
 K
 ml/unsupervised_learning.md,e/9/e999e71104f7ef5a3b55f25b8c6df27f079db660
-=
-ml/metrics.md,3/3/33ae103ff10d5375016c1c06edcdedd8e3fe6f29
 <
 re/README.md,6/b/6b517708e3b062972a11471606d2619c9f00edce
 U

@@ -46,8 +46,9 @@ How to split: In brutal force, we calculate all impurity gain of different featu
 
 There are other tricks like:
 - for feature:
-  - use important features only
+  - use important feature subset only
   - random subset (in RF)
+  - use feature clustering, frequency encoding or target encoding to reduce cardinality of features.
 - for split:
   - use binary search
   - chunklise 
@@ -58,6 +59,8 @@ Impurity measures:
 - Missrate
 
 Impurity gain: $I - (p * I(1) + q * I(2))$.
+
+(P.s Entropy may create deeper trees with more balanced splits.)
 
 #### Post-Pruning 
 Often on validation set. To reduce model complexity
