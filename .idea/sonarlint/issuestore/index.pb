@@ -23,8 +23,6 @@ N
 ml/semi_supervised_learning.md,c/6/c6f06dd5d6cc6237bb23d4d158f4d2727e2a8a25
 F
 ml/model_ensembling.md,7/8/78fea9b0f694b31c15f83d9ebc004c4ea5c1c5ea
-E
-dl_advanced/robust.md,d/4/d4fa730a42af99b9edcf31a9170350c78a0fcd28
 =
 nlp/README.md,6/4/643f8b74c582769eea3a1fcbed1af9ae12a53821
 9
