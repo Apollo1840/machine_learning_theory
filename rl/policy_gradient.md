@@ -50,7 +50,8 @@ Typically, we end the loop after several rounds.
 
 ### Objective:
 
-The goal is to find proper $\theta$ in $𝜋_𝜃(a \mid s)$ via maximizing the **expected cumulative reward** $J(𝜃)$, defined as:
+The goal is to find proper $\theta$ in $𝜋_𝜃(a \mid s)$ via maximizing the expected **Rewards-to-go(cumulative reward)** from initial state $J(𝜃)$, 
+defined as:
 
 
 $$
@@ -64,7 +65,7 @@ $$
 - $r_t$: reward at time step $t$.
 - $\gamma$: discount factor.
 
-(Note: $J(\theta)$ is espected Rewards-to-go from initial state.)
+
 ### Update Rule:
 
 Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $𝜃$ is:
@@ -79,7 +80,7 @@ $$
 G_t = \sum_{i=t}^\infty \gamma^{i-t} r_i = r_t + \gamma r_{t+1} + \gamma^{2} r_{t+2} + ... 
 $$
 
-- $G_t$: the cumulative reward (return) from time $t$.
+- $G_t$: **Rewards-to-go(cumulative reward)** from time $t$.
 
 Parameters are updated using gradient ascent:
 
