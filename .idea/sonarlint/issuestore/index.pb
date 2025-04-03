@@ -55,9 +55,5 @@ R
 "transformer/positional_encoding.md,6/9/69b6bf014a774bb68655a651a7be1c8044fb29d3
 9
 	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
-B
-dl_advanced/NAS.md,4/9/498f0a438727509938f4caf299b2698a10afb3dd
-P
- dl_advanced/transfer_learning.md,c/e/cecf0c89e57d14b77ea9cb43f6649d983b310500
 <
 dl/README.md,e/7/e7f75a9496bcc94d42f8079cc17d03ba5e1f6964

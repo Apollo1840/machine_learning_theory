@@ -44,7 +44,7 @@ Methods:
 
 ### Offline RL
 In offline RL, the agent does not interact with a live environment. 
-Instead, it learns from a **FIXED** dataset consisting of sequences of `(state, action, reward)` collected beforehand. 
+Instead, it learns from a **FIXED** dataset consisting of Trajectories collected beforehand. 
 The RL algorithm trains the model solely using this static dataset. 
 This approach is particularly useful in scenarios where environment interactions are costly, dangerous, or impractical. 
 
@@ -67,12 +67,14 @@ The environment is often modeled as a Markov Decision Process (**MDP**), where:
 - The objective is to determine a policy (a sequence of actions over state) that maximizes the expected discounted rewards over time.
 This approach explicitly uses the learned environment model to simulate or plan future actions and outcomes.
 
+There are rear model-based RL methods.
+
 ### Model-free RL
 In contrast, model-free RL does not attempt to explicitly model the environment. Instead, it directly learns the optimal policy or value function based on the agent's interactions with the environment. The agent explores the environment, collects experiences, and adjusts its strategy to maximize the cumulative reward.
 
 Model-free RL methods are further divided into:
 
-- **Value-based methods**: Learn a value function `Q(s, a)` to guide action selection (e.g., Q-Learning).
+- **Value-based methods**: Learn a value function `Q(s, a)` to guide action selection (e.g., MC, TD, Q-Learning).
 - **Policy-based methods**: Directly learn a policy `pi(s)` that maps states to actions (e.g., REINFORCE).
 - **Actor-Critic methods**: Combine value-based and policy-based approaches for efficiency and stability. 
   Actor corresponds to `pi(s)` and Critic corresponds to `V(s)` which used to estimate advantage (`Q(s, a)-V(s)`) better, 
