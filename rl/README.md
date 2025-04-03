@@ -110,11 +110,33 @@ Methods:
 ### MC & TD
 see `mc_td.md`.
 
+MC:
+$$
+L_{\text{MC}}(\phi) = \frac{1}{2} \left( V_\phi(s_t) - R_t \right)^2,
+$$
+
+TD:
+$$
+L_{\text{TD}}(\phi) = \frac{1}{2} \left( V_\phi(s_t) - TD_t \right)^2.
+$$
+
 ### SARSA & Q-learning
 see `./sarsa_qlearning.md`.
 
 - state space: finite
 - action space: finite
+
+Both based on TD(0).
+
+Q-learning:
+$$
+Q(s, a) \gets Q(s, a) + \alpha \[r + \gamma \max_{a'} Q(s', a') - Q(s, a) \]
+$$
+
+Sarsa:
+$$
+Q(s, a) \gets Q(s, a) + \alpha \[r + \gamma Q(s', a') - Q(s, a) \]
+$$
 
 ### DQN
 see `DQN.md`.

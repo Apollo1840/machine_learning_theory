@@ -1,7 +1,9 @@
 # SARSA & Q-learning
 They are both online, model-free RL methods.
-They both try to update `Q(s, a)` **Table** to get best policy as:
-`a|s = argmax(Q(s, a)).`
+They both try to update `Q(s, a)` **Table** to get best action as:
+`a|s = argmax(Q(s, a)).` 
+However, Q-learning will use the best action to update its Table, 
+while SAESA will use the actual sampled action to update its Table.
 
 **Q-Learning**
 
