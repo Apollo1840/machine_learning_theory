@@ -40,8 +40,8 @@ In continous (control) example, a probabilitical model is often trained.
 
 In PG method, we will modeling the **Policy function**. 
 
-We will run one episode or a batch of episodes based on current policy, 
-to collect one or a batch of **Trajectories**.
+We will run one episode (or a batch of episodes) based on current policy, 
+to collect one (or a batch of) **Trajectories**.
 From those trajectories, we could calculate the **Gradient** for updating the policy function.
 
 Typically, we end the loop after several rounds.
@@ -64,7 +64,7 @@ $$
 - $r_t$: reward at time step $t$.
 - $\gamma$: discount factor.
 
-
+(Note: $J(\theta)$ is espected Rewards-to-go from initial state.)
 ### Update Rule:
 
 Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $𝜃$ is:
@@ -76,7 +76,7 @@ $$
 
 
 $$
-G_t = \sum_{i=t}^\infty \gamma^i r_i = r_t + \gamma^{t+1} r_{t+1} + \gamma^{t+2} r_{t+2} + ... 
+G_t = \sum_{i=t}^\infty \gamma^{i-t} r_i = r_t + \gamma r_{t+1} + \gamma^{2} r_{t+2} + ... 
 $$
 
 - $G_t$: the cumulative reward (return) from time $t$.

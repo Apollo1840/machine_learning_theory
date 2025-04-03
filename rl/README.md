@@ -120,13 +120,13 @@ $$
 L_{\text{TD}}(\phi) = \frac{1}{2} \left( V_\phi(s_t) - TD_t \right)^2.
 $$
 
+MC and TD are fundamental idea of most of RL methods.
+
 ### SARSA & Q-learning
 see `./sarsa_qlearning.md`.
 
 - state space: finite
 - action space: finite
-
-Both based on TD(0).
 
 Q-learning:
 $$
@@ -143,6 +143,7 @@ see `DQN.md`.
 
 - state space: $\infty$
 - action space: finite
+
 
 ### PG-AC
 see `policy_gradient.md`.
