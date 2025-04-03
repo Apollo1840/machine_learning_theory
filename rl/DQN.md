@@ -5,7 +5,7 @@ The agent collects experience tuples `(s,a,r,s′)` and stores them in a replay 
 The neural network learns to minimize the Temporal Difference (TD) error:
 
 $$
-\text{Loss} = \[ r + \gamma \max_{a'} Q_{\xi}}(s', a') - Q_{\theta}(s, a) \]^2
+\text{Loss} = \[ r + \gamma \max_{a'} Q_{\xi}(s', a') - Q_{\theta}(s, a) \]^2
 $$
  
 where target $Q_{\xi}$ is a separate target network updated periodically.
