@@ -32,7 +32,7 @@ $$
 TD_t = r_{t+1} + \gamma V_\phi(s_{t+1}) 
 $$
 
-Although this target is **biased** (since it depends on the current estimate $V_\phi(s_{t+1})$), 
+Although this target is **biased** (since it depends on the current estimate $V_\phi(s_{t+1})$ ), 
 it generally has lower variance than the full-return target.
 
 In many practical AC algorithms (especially on-policy methods), TD methods (TD(0)) are preferred
