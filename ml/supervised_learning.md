@@ -38,20 +38,25 @@ reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migr
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28ML.one%7Ce8b3e705-493c-431b-b04e-8e9e3752864d%2FDecision%20Tree%28Forest%5C%29%7C3f9ac3ce-1461-4434-bddf-4eb1407368f7%2F%29&wdorigin=NavigationUrl
 
 #### Process
-- Choose split: choose a feature and a threshold to split the data
-- Evaluate split: measure the quality of the split, determine whether split further or stop.
-- Assign label: assign label to the final leaf node.
+- Choose split: choose a feature and a threshold (or category split) to split the data.
+- Evaluate split: measure the quality of the split, determine whether split further or stop (criterion: pure node etc.).
+- Assign label: assign label to the stop node (leaf node).
 
-How to split: In brutal force, we calculate all impurity gain of different feature and split combination.
+How to choose split: 
+
+In brutal force, we calculate all impurity gain of different feature and split combination.
 
 There are other tricks like:
 - for feature:
-  - use important feature subset only
-  - random subset (in RF)
-  - use feature clustering, frequency encoding or target encoding to reduce cardinality of features.
+  - use important feature subset only.
+  - random feature subset (in RF).
+  - feature transform
+    - Numerical to Categorical: Mid-only, chunking, random chunking, feature clustering.
+    - Categorical to Categorical: feature clustering, Hashing. 
+    - Categorical to Numerical: **frequency encoding** or **target encoding**(only for regression).
+      
 - for split:
-  - use binary search
-  - chunklise 
+  - use greedy search (such as binary search, works better for regression)
 
 Impurity measures:
 - Gini score: := $1 - \sum_{i=1}^{C} p_i^2$
@@ -60,7 +65,8 @@ Impurity measures:
 
 Impurity gain: $I - (p * I(1) + q * I(2))$.
 
-(P.s Entropy may create deeper trees with more balanced splits.)
+(P.s Entropy is more computational expensive because of log, and because of more conservate log operation, it 
+create more balanced tree).
 
 #### Post-Pruning 
 Often on validation set. To reduce model complexity

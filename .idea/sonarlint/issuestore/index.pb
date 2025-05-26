@@ -41,16 +41,12 @@ E
 transformer/README.md,0/3/035d7f24fb4f6b51aaad728e1ccecfb21c1eab76
 J
 ml/00_statistics_for_ml.md,0/4/04f008f849e77532e27af48b91cb76dee695393c
-N
-transformer/attention_in_nn.md,e/7/e7a4acb1d276c567ca8dba1b367382ba4f177ba4
 B
 ai_agent/README.md,8/9/892f9be820b1af155df8eaf33a9253de1f0eb023
 9
 	cv/cnn.md,1/c/1c9eb4b5aea58da7ccd970681103e8611d8ae064
 ?
 re/retrieval.md,6/e/6e1d797f470a617a78a466e5eed5aa2e4639c6a1
-R
-"transformer/positional_encoding.md,6/9/69b6bf014a774bb68655a651a7be1c8044fb29d3
 9
 	rl/ppo.md,9/f/9f18b9ac6efcc42d7220534c256e5b86df79f3aa
 <
