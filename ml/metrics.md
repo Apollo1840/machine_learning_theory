@@ -49,7 +49,7 @@ https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=t
 ### Micro- and Macro-
 For performance measure of multi-class classification.
 - Macro-average: average F1.
-- Micro-average: harmonic average of weighted precision and recall, roughly weighted average F1.(NOT equal!)
+- Micro-average: harmonic average of global precision and recall. In general, close to weighted average F1.(NOT equal!)
 
 
 ## Metrics for clustering

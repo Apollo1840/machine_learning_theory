@@ -2,6 +2,7 @@
 reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28ML.one%7Ce8b3e705-493c-431b-b04e-8e9e3752864d%2F07-NeuroNetwork%7C02a354b1-68be-4afe-ac68-241c18b29aab%2F%29&wdorigin=NavigationUrl
 
 ## Connection
+
 ### Skip connection
 Skip connection is a concept used in neural networks. 
 It allows the model to bypass one or more layers by feeding the output of one layer directly into another layer further down the network.
@@ -36,8 +37,27 @@ It allows the model to bypass one or more layers by feeding the output of one la
     - InfoNCE Loss
     - NT-Xent Loss
   - KL divergence
+  
+Here we just listed and introduce some basic losses.
+For wider understanding, go to `./losses.md`.
 
 ### Entropy loss
+
+Binary cross-entropy (BCE):
+
+$$
+\mathcal{L}\_{\text{BCE}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} \[ y_{i,c} \log(\hat{y}\_{i,c}) + (1 - y_{i,c}) \log(1 - \hat{y}_{i,c}) \]
+$$
+
+Categorical cross-entropy (CCE):
+
+$$
+\mathcal{L}\_{\text{CCE}} = -\frac{1}{N} \sum_{i=1}^{N} \sum_{c=1}^{C} y_{i,c} \log(\hat{y}_{i,c})
+$$
+
+A important note is that: when softmax come with the CCE loss, the gradient is simply $y - \hat{y}$. Whereas, if we use MSE to replace CCE, 
+it will be $(y - \hat{y})(1 - \hat{y})\hat{y}$, gradient will be very small close to 0 and 1. 
+
 
 ### NLL loss
 
@@ -153,6 +173,11 @@ to avoid them, we can use:
 - skip connection.
 - batch normalization (to prevent too-high or too-low activation, resulting in too-high or too-low last term of the formula).
 
+
+An important insight is that:
+- Gradient are outter product of input and discrepancy. 
+
+
 ## Advances
 
 ### Normalization
@@ -161,7 +186,9 @@ to avoid them, we can use:
 - **InstanceNorm**: (Similar to LayerNorm) Every feature of a single layer with a single input is normalized across each other within one channel.
 - **GroupNorm**: Grouped instanceNorm, ie. some channels are grouped.
 
-(P.S. In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch)
+#### BatchNorm
+- There is a trainable re-scaling step. 
+- In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch.
 
 ### Dropout
 

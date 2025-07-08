@@ -76,7 +76,7 @@ Often on validation set. To reduce model complexity
 #### Forest building
 - Bagging: Each tree is trained on a different random subset of the data.
 - Random: Random subset of features. (size = $\sqrt(d)$)
-- Voting:  Uses majority voting across trees.
+- Voting: Uses majority voting across trees.
 
 ### Advantages of RF
 - resilient to outlier and missing data 
