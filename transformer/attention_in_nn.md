@@ -11,7 +11,7 @@ Those scores are often calculated via the dot product of queries and keys. The q
 Aggregate the output of parallel layers.
 
 $$
-y = sum_{i}{softmax(W_gx)f_i(x)}
+y = \sum_{i}{softmax(W_gx)f_i(x)}
 $$
 
 (P.S fundation of MoE, MoE is a special case where only top-k modules are activated).

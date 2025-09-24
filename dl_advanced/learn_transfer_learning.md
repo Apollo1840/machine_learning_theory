@@ -1,7 +1,7 @@
 # Transfer learning
 
 ## Assumptions
-- **Feature reusability**:  the features(or latent representation) learned from the source domain/task are useful for the target domain/task. Because of the domain relation and task similarity. 
+- **Feature reusability**:  the features(or latent representation) learned from the source domain/task are useful for the target domain/task. Because of the **domain relation and task similarity**. 
 - **Source dependability**: the source task should have sufficient data and a well-trained model so that the knowledge is valid.
 - **Finetune consistency**: the finetune method ensure the model benefit from the learned feature, and has the ability to adapt to target domain.  
 
@@ -12,22 +12,21 @@
 #### Entire finetune
 Unfrozen the all weights and treat weights of the pretrained model as weights initialization.
 
-- **Cautious Updating**:
-  Prevent the catastrophical change of the model parameters. For example, we can use KL divergence to constraint the parameter changes.
-  
-- **Learning Rate Tuning**:
+In Entire finetune, we tend to update the weights cautiously. For example, we use smaller LR overall or wisely, such as:
+
+-  **Learning Rate Tuning**:
 Use layer-specific learning rates during finetuning, assigning lower rates to earlier layers and higher rates to later layers. 
-This aligns with the intuition that earlier layers contain general features, while later layers are more task-specific.
-  
-- **Elastic Weight Consolidation (EWC)**:
-Penalize changes to parameters deemed important (Fisher-Information matrix) for the pretrained model’s tasks. 
-This approach helps mitigate catastrophic forgetting, ensuring the model retains its original capabilities while adapting to new tasks. 
+
+- **Cautious Updating**:
+Use L2 or KL divergence to penalize changes to parameters.
+  - **Elastic Weight Consolidation (EWC)**:
+  Penalize changes to parameters deemed important (Fisher-Information matrix) for the pretrained model’s tasks. 
 
 #### Partial finetune
 Unfrozen specific layers (usually the last task head or last several laysers) and only updates theirs weights during the finetuning.
 
 - **BitFit**:
-Only update the bias terms of the pretrained model during finetuning, keeping all other parameters frozen. This method reduces computational overhead significantly while retaining task performance.
+Only update the **bias** terms of the pretrained model during finetuning, keeping all other parameters frozen. 
 
 
 #### Proceduralized partial finetune
@@ -39,18 +38,47 @@ Dynamically unfrozen layers. For example, start by finetuning only the task head
 Add more layers (before/in-between/after) to the pretrained model and only finetune those layers.
 
 Examples:
-- Adding task-specific classification heads.
-- Adding domain-specific input reformers/encoders.
-- Integrating adapters within layers. such as **Adapter Tunning**, insert small bottleneck layers (adapters) into each layer of the pretrained model. During finetuning, only the adapter layers are updated, leaving the main model weights untouched.
+- (start) Adding domain-specific input reformers/encoders.
+- (end) Adding task-specific classification heads.
+- (middle) Integrating adapters within layers. such as **Adapter Tunning**, insert small bottleneck layers (adapters) into each layer of the pretrained model. During finetuning, only the adapter layers are updated, leaving the main model weights untouched.
+
+#### Aggregated weights
+
+- **Delta Tuning**:
+We train a linear update of the weights ($\Delta w$), instead of direct change the weights. Note this is mathematically equivalent to direct finetune. However we can do various things upon the ($\Delta w$) and this idea is fundamental to understand more complex PEFT methods.
 
 #### Aggregated token
 Add task-specific prefix tokens to the input sequence. 
 These tokens are learnable and serve to steer the model toward task-specific objectives without modifying the pretrained parameters.
 
-### Parameter-efficient finetune
+### Parameter-efficient finetune (PEFT)
 
 #### LoRA
-Use two low-rank matrix multiplications to represent W and update those matrices instead of W.
+Base on Delta Tuning, but use two low-rank matrix multiplications to represent $\Delta w$ and update those matrices instead of W.
 
-note: W = A x B, A, B is learned through training, not decomposed from W after training.
+$$
+  W_{final} = W_{pretrained} + \Delta W \\
+  \Delta W = A × B
+$$
 
+where 
+- `A ∈ ℝ^(d×r)`, `B ∈ ℝ^(r×k)`
+- Rank `r ≪ min(d,k)` (typically 4-64)
+- Only `A` and `B` are trained, `W_pretrained` is frozen
+
+in implementation, we just create LoRA supported layers like:
+
+´´´python
+
+    def forward(self, x):
+        # Normal linear forward with frozen W
+        result = F.linear(x, self.weight, self.bias)
+
+        # Add the LoRA update
+        if self.r > 0:
+            lora_update = F.linear(x, self.A.T)      # (batch, r)
+            lora_update = F.linear(lora_update, self.B)  # (batch, out_features)
+            result += self.scaling * lora_update
+
+        return result
+´´´
