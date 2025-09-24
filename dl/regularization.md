@@ -22,10 +22,16 @@ Clues:
 - **InstanceNorm**: (Similar to LayerNorm) Every feature of a single layer with a single input is normalized across each other within one channel.
 - **GroupNorm**: Grouped instanceNorm, ie. some channels are grouped.
 
-(P.S. In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch)
+### BatchNorm
+- There is a trainable re-scaling step. 
+- In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch.
+- Obviously, BatchNorm is not suitable for sequential input, where number of tokens is not stable. 
 
-- Dropout
+### Dropout
 
+Randomly deactivate a fraction of neurons of a layer whenever tensor pass forward during the training phase.
+
+It prevents the network from becoming overly reliant on specific neurons, thus promoting the learning of more robust and general features and reducing overfitting.
 
 ## Penalty
 - L1

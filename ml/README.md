@@ -43,8 +43,8 @@ typically by helping it learn the underlying structure and **distribution** of d
 ## Data
 Evolves **Data engineering** and **feature selection**.
 
-Prerequisites of ML, introduced in `data_engineering_for_ml.md` 
-and `feature selection.md`. 
+Prerequisites of ML, introduced in `00_data_engineering_for_ml.md` 
+and `01_feature selection.md`. 
 
 ## Model
 models for:
