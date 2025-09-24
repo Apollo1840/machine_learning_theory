@@ -23,15 +23,26 @@ Clues:
 - **GroupNorm**: Grouped instanceNorm, ie. some channels are grouped.
 
 ### BatchNorm
+
+Points:
 - There is a trainable re-scaling step. 
 - In the inferencing stage of a BatchNorm, the moving average during training is used, instead of the inferencing batch.
 - Obviously, BatchNorm is not suitable for sequential input, where number of tokens is not stable. 
+
+### LayerNorm
+Functions:
+- Control the scale of gradient, prevent exploding or vanishing.
+- Average feature effect to gain generalization.
+- Normalizaiton is optimizer friendly.
 
 ### Dropout
 
 Randomly deactivate a fraction of neurons of a layer whenever tensor pass forward during the training phase.
 
-It prevents the network from becoming overly reliant on specific neurons, thus promoting the learning of more robust and general features and reducing overfitting.
+Function, explanation from three perspectives:
+- **Regularization**: create noise, similar to add a regularization term. Prevent overfitting. 
+- **Feature robustness**: It prevents the network from becoming overly reliant on specific neurons.
+- **Ensemble effect**: similar to traing a bunch of different models and ensemble them. 
 
 ## Penalty
 - L1

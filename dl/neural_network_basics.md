@@ -3,6 +3,12 @@ reference: https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migr
 
 ## Connection
 
+
+### MLP & FFN & Bottleneck FFN
+- MLP: Multi-layer neuro network.
+- FFN: One **larger** layer = two linear project with one activation in-between. 
+- Bottleneck FFN: One **smaller** layer.
+
 ### Skip connection
 Skip connection is a concept used in neural networks. 
 It allows the model to bypass one or more layers by feeding the output of one layer directly into another layer further down the network.
