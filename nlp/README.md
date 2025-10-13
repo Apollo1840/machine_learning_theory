@@ -1,6 +1,17 @@
 # NLP
 
-## Fields
+## Classic NLP tasks (古典NLP任务)
+
+### Named Entity Recognition (NER)
+
+Can be regarded as:
+- text version of image segmentation.
+- word, N-gram level classification. 
+- start_index and end_index inference.
+
+Classic problem:
+- Part-of-Speech Tagging (POS Tagging)
+- Structured information extraction
 
 ### Text classification
 - Sentence-level
@@ -8,6 +19,21 @@
 
 Sentence-level: Convolutional Neural Networks for Sentence Classification
 code: https://github.com/dennybritz/cnn-text-classification-tf
+
+Classic problem:
+- Spam detection
+- Sentiment analysis
+
+### Text embedding
+
+Mostly for similarity analysis.
+
+### Doc2Doc
+
+Input and output are both document. Classic problem are:
+- Translation
+- Summarization
+- Article-based Q&A
 
 ## Concepts
 

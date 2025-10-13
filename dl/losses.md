@@ -1,6 +1,8 @@
 
 # Losses
 
+"losses is more than how you quantify your model outputs to the target. It is essentally about how you model your problem."
+
 ## Basic concepts
 
 ### Kullback-Leibler (KL) Divergence

@@ -27,7 +27,9 @@ with a high-dimensional random $B$.
 ## Attention-influcial PE
 Very different from tradictional PE approach, it introduces biases when calculate attention scores.
 
-Usually incorporate relative distances explicitly.
+Usually it:
+- incorporate relative distances explicitly.
+- apply to each layer.
 
 
 ### Linear Biased PE (LBPE): 
@@ -52,7 +54,7 @@ $$
 
 $R$ (Relative Encoding Matrix) is a matrix where each row corresponds to a possible relative distance. 
 
-´´´python
+```python
 
 Attention score for (i=5, j=3) = Q[5] • K[3] + Q[5] • R[+2]
 Attention score for (i=5, j=4) = Q[5] • K[4] + Q[5] • R[+1]  
@@ -60,7 +62,7 @@ Attention score for (i=5, j=5) = Q[5] • K[5] + Q[5] • R[0]
 Attention score for (i=5, j=6) = Q[5] • K[6] + Q[5] • R[-1]
 Attention score for (i=5, j=7) = Q[5] • K[7] + Q[5] • R[-2]
 
-´´´
+```
 
 
 ### Rotary Positional Embedding (RoPE): 

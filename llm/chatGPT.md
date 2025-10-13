@@ -36,6 +36,8 @@ There are three steps to build chatGPT:
 - Data in high-quality and diverse.
 - Data includes long conversation.
 
+After the finetuning, the LLM already knows how to **follow human instructions**, ie. act like a chatBot.
+
 ## RLHF (Reinforcement Learning from Human Feedback)
 It is the 3rd step where a Reward Model(RM) is trained and it is used to further finetune the SFT through Proximal Policy Optimization (PPO).
 
@@ -45,7 +47,7 @@ After we get a bunch of preference pairs (A, B), meaning A is more preferable ov
 We can define the loss as following:
 
 $$
-L = -\log\left(\frac{\exp(RM(A)) + \exp(RM(B))}{\exp(RM(A))}\right)
+L = -\log\left(\frac{\exp(RM(A))}{\exp(RM(A)) + \exp(RM(B))}\right)
 $$
 
 Lets write RM as $RM(x, y)$: 
@@ -59,7 +61,7 @@ and $y_t^{(a)}$ is more preferable than $y_t^{(b)}$.
 the loss is:
 
 $$
-L = -\log\left(\frac{\exp(RM(x_t, y_t^{(a)})) + \exp(RM(x_t, y_t^{(b)}))}{\exp(RM(x_t, y_t^{(a)}))}\right)
+L = -\log\left(\frac{\exp(RM(x_t, y_t^{(a)}))}{\exp(RM(x_t, y_t^{(a)})) + \exp(RM(x_t, y_t^{(b)}))}\right)
 $$
 
 ### How to use PPO to finetune the SFT

@@ -16,6 +16,19 @@ It allows the model to bypass one or more layers by feeding the output of one la
 - ( <-- ) on the other hand, it provides shorter paths for gradients to flow through the network, maintaining stronger gradients for early layers, and facilitating deeper deep learning.
 
 
+## Activation
+
+- ReLU
+- Sigmoid
+- Softmax
+- Tanh
+- LeakyReLU
+- Softplus: $\log(1+\exp(-z))$
+- ELU
+- GELU
+- SiLU
+- SwiGLU(A complex gate)
+
 ## Task head
 
 - regression:

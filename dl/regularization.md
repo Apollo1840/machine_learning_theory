@@ -3,6 +3,16 @@
 Reference: 
 - https://onedrive.live.com/edit.aspx?resid=BEF76BD482A6B496!16288&migratedtospo=true&wd=target%28%E6%B7%B1%E5%BA%A6%E5%AD%A6%E4%B9%A0.one%7C4ab3a169-69c4-42b8-b4ff-6611a9ee8a28%2F%E6%A8%A1%E5%9E%8B%E6%AD%A3%E5%88%99%E5%8C%96%7Ca138db2e-df10-495a-b840-ceb38ea5af64%2F%29&wdorigin=NavigationUrl
 
+
+About overfitting:
+Overfitting is model overly fits to the training data and lost its generalizibility. 
+
+(However, in large DL model, we also see double descent phenomenon of test error:
+
+![Double Descent](./images/double_descent.png)
+
+)
+
 Clues:
 - Prevent overfitting directly (DataAug, EarlyStopping)
 - Normalize data/weights (batchNorm, LayerNorm)
@@ -53,4 +63,18 @@ Function, explanation from three perspectives:
 - bagging
 - boosting
 - stacking
+
+## Label smoothing
+
+Instead of using hard, one-hot encoded labels (e.g., `[0, 1, 0]`), it creates "soft" labels by distributing a small amount of the probability mass from the correct class to the other classes. 
+
+For example, for a 3-class problem with a hard label `[0, 1, 0]` and a smoothing factor `ε = 0.1`, the new soft label is calculated as:
+
+$$
+y_{smooth} = (1 - ε) * y_{hard} + ε / C
+$$
+
+
+> [0, 1, 0] -> [0.0333, 0.9333, 0.0333]
+
 

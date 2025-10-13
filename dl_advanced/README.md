@@ -18,7 +18,10 @@ model (eg. a distance-based model) is used to accomplish the task.
 
 ### constructive learning
 
-Or the more common term: "generative learning".
+Or the more common term: "generative learning". 
+
+#### Next token prediction
+It is crucial that you are not forcing the model to predict a deterministic output while the next token can be quite random. And you do not have that amount of data to cover all randomness(redundancy) of the next token. 
 
 ### constrastive learning
 

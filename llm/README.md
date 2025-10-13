@@ -1,4 +1,26 @@
-# Large Language Models
+# Large Language Models (LLM)
+
+## Introduction
+
+An area significantly improved performance of solving classic Doc2Doc problem. 
+The reason behind it is its true emerged 'intelligence'.
+Hence we use it solve modern Doc2Doc Problem (or modern NLP Problem) such as:
+- small talk
+  - role play
+- direct Q&A 
+  - common sense, common reasoning
+  - clear defined STEM challenges
+- creatation
+  - problem-solving code
+  - artworks
+- high-level pattern learning
+  - input-output pair learning, figure out the pattern
+- tool usage
+  - use information-processing helper tools
+    - to answer question
+    - to create
+  - interact with simulation tools
+
 
 ## Theory
 
@@ -45,7 +67,7 @@ Output: "movie was fantastic! Sentiment: Positive"
 
 
 
-## Implementation
+## Tech based on LLM
 
 ### Chatbot
 
