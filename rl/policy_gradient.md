@@ -1,4 +1,4 @@
-# Policy Gradient
+# Policy Gradient ($\pi$-learning)
 
 reference:
 - (openAI definition) https://spinningup.openai.com/en/latest/algorithms/vpg.html
@@ -8,31 +8,33 @@ reference:
 
 ---
 
-Policy Gradient is a method direct learn the policy function - $𝜋_𝜃(a \mid s)$. 
+Policy Gradient is a method direct learn the policy function - $\pi_{\theta}(a \mid s)$. 
 
 So it could also be called $\pi$-learning, considering Q-learning is to learn the `Q(s, a)` table. 
 
 It belongs to **on-line, model-free, on-policy** category of RL. And the state space and action space are **infinite**.
 ## Prequisities
 
-### Policy and Policy gradient ($𝜋_𝜃(a \mid s)$ & $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t))$
+### Policy and Policy gradient ($\pi_{\theta}(a \mid s)$ & $\nabla_{\theta} \log \pi_{\theta}(a_t \mid s_t))$
 
-$𝜋_𝜃(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
+$\pi_{\theta}(a \mid s)$ can be understood as $a = f_{\theta}(s)$,
 and we can use an neuro network to model $f_{\theta}$.
 Give $s_t$, we can calculate $\hat{a_t}$ (a probability distribution), 
 from which the chosen action $a_t$ is typically sampled. 
 
-$𝜋_𝜃(a_t \mid s_t)$ is a scalar (eg. one-hot vector $a_t^{T}$ times probability distribution $\hat{a_t}$.
+$\pi_{\theta}(a_t \mid s_t)$ is a scalar (eg. one-hot vector $a_t^{T}$ times probability distribution $\hat{a_t}$.
 ), representing the probability of choosing $a_t$ responding $s_t$.
-So $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t)$ is a same shape variable of $\theta$, 
+So $\nabla_{𝜃} \log \pi_{\theta}(a_t \mid s_t)$ is a same shape variable of $\theta$, 
 
 #### Examples
 
 First, let's make a trival discrete example:
 
-$f_{\theta}(s_t) = Softmax(\theta * s_t)$ where $\theta$ is a M*N matrix.
+$$
+\hat{a_{t}} = f_{\theta}(s_t) = \text{Softmax}(\theta * s_t), \theta \in R^{M*N}
+$$
 
-Then the $\nabla_{𝜃} \log 𝜋_𝜃(a_t \mid s_t) =  (a_t - \hat{a_t}) \otimes s_t $, where $a_t$ is the one-hot vector.
+Then the $\nabla_{𝜃} \log \pi_{\theta}(a_t \mid s_t) =  (a_t - \hat{a_t}) \otimes s_t \in R^{M*N}$, where $a_t$ is the one-hot vector.
 
 In continous (control) example, a probabilitical model is often trained.
 
@@ -48,18 +50,24 @@ Typically, we end the loop after several rounds.
 
 ## Theory
 
+Lets first define **Rewards-to-go(cumulative reward)** from time $t$ - $G_t$:
+
+$$
+G_t = \sum_{i=t}^\infty \gamma^{i-t} r_i = r_t + \gamma r_{t+1} + \gamma^{2} r_{t+2} + ... 
+$$
+
+Note that:
+
+$$
+G_0 = \sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... 
+$$
+
 ### Objective:
 
-The goal is to find proper $\theta$ in $𝜋_𝜃(a \mid s)$ via maximizing the expected **Rewards-to-go(cumulative reward)** from initial state $J(𝜃)$, 
-defined as:
-
+The goal is to find proper $\theta$ in $\pi_{\theta}(a \mid s)$ via maximizing expected value of $G_0$, note it as $J(\theta)$:
 
 $$
-J(\theta) = \mathbb{E}\_{\pi\_\theta} \[ \sum_{t=0}^\infty \gamma^t r_t \]
-$$
-
-$$
-\sum_{t=0}^\infty \gamma^t r_t = r_0 + \gamma^1 r_1 + \gamma^2 r_2 + ... 
+J(\theta) = \mathbb{E}_{\pi_{\theta}} [ G_0 ] = \mathbb{E}_{\pi_\theta} [ \sum_{t=0}^\infty \gamma^t r_t ]
 $$
 
 - $r_t$: reward at time step $t$.
@@ -72,15 +80,9 @@ Based on Policy Gradient Theorem, the gradient of $J(𝜃)$ with respect to $�
 
 
 $$
-\nabla_{𝜃} J(𝜃) = \mathbb{E}\_{\pi\_{𝜃}, t} \[ \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) \cdot G_t \]
+\nabla_{\theta} J(\theta) = \mathbb{E}_{\pi_{\theta}, t} [ \nabla_{\theta} \log \pi_{\theta}(a_t \mid s_t) \cdot G_t ]
 $$
 
-
-$$
-G_t = \sum_{i=t}^\infty \gamma^{i-t} r_i = r_t + \gamma r_{t+1} + \gamma^{2} r_{t+2} + ... 
-$$
-
-- $G_t$: **Rewards-to-go(cumulative reward)** from time $t$.
 
 Parameters are updated using gradient ascent:
 
@@ -98,7 +100,7 @@ Note that, the expected value $\nabla_{𝜃} J(𝜃)$ needs to be estimated.
 
 Different PG methods has their own way to estimate $\nabla_{𝜃} J(𝜃)$, such as:
 - (REINFORCE) $\nabla_{𝜃} J(𝜃) \approx \sum_t \nabla_{𝜃} \log \pi_{𝜃}(a_t \mid s_t) G_t$
-- (AC) $\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s)\[Q(s, a)-v(s)\]$
+- (AC) $\nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s)[Q(s, a)-v(s)]$
 
 
 ## Methods
@@ -136,7 +138,7 @@ $$
 $$
 
 $$
-{\delta}\_t := A(s_t, a_t) = r_t + \gamma V(s_{t+1}) - V(s_{t})
+{\delta}_t := A(s_t, a_t) = r_t + \gamma V(s_{t+1}) - V(s_{t})
 $$
 
 We will only need to find a proper estimate of $V$ as $V_{\phi}$.
@@ -144,11 +146,11 @@ We will only need to find a proper estimate of $V$ as $V_{\phi}$.
 Here we take TD method(see `mc_td.md` for more details) for estimating V(s) as example, loss of $V_\phi$:
 
 $$
-{{\delta}\_{t \| \phi}}^2 = \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
+{{\delta}_{t \| \phi}}^2 = \left( r_t + \gamma V_\phi(s_{t+1}) - V_\phi(s_t) \right)^2
 $$
 
-For each episode, we will record the whole episode and calculate the discounted rewards (${\delta}\_t$) for each $t$,
-as well as $\pi_{𝜃}(a_t \mid s_t)$:
+For each episode, we will record the whole episode and calculate the discounted rewards (${\delta}_t$) for each $t$,
+as well as $\pi_{\theta}(a_t \mid s_t)$:
 
 $$
  \{ (s_t, a_t, r_t) \} \Rightarrow \{ (\pi_{𝜃}(a_t \mid s_t), {\delta}\_t, {{\delta}\_{t \| \phi}}^2 \})
@@ -164,8 +166,8 @@ $$
 \nabla_{𝜃} J(𝜃) \propto \nabla_{𝜃} \log \pi_{𝜃}(a \mid s) A(s, a)
 $$
 
-However, we do not use $Q(s, a) - V(s)$ to quantify A(s, a), instead we use group relative advantage 
-to estimate A(s, a). i.e we adapt several actions simultaneously in a group and based on their different rewards-to-go, based on
+However, we do not use $Q(s, a) - V(s)$ to quantify $A(s, a)$, instead we use group relative advantage 
+to estimate $A(s, a)$. i.e we adapt several actions simultaneously in a group and based on their different rewards-to-go, based on
 calculate the relative advantage as advance score (scaled difference over average). 
 
 And in GRPO, the update limitation trick from PPO method (see `ppo.md`) is also used.

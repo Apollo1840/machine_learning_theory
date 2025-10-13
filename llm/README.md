@@ -10,7 +10,7 @@ Hence we use it solve modern Doc2Doc Problem (or modern NLP Problem) such as:
 - direct Q&A 
   - common sense, common reasoning
   - clear defined STEM challenges
-- creatation
+- creation
   - problem-solving code
   - artworks
 - high-level pattern learning
@@ -27,8 +27,8 @@ Hence we use it solve modern Doc2Doc Problem (or modern NLP Problem) such as:
 | Model     | Type      |  Encoder | Decoder
 |---------------|---------------|-------------|-------------|
 | Native Transformer; T5 | Encoder-Decoder | x | x|
-| GPT | Decoder-Only |  | x|
 | BERT | Encoder-Only |x | |
+| GPT | Decoder-Only |  | x|
 
 ### BERT (Bidirectional Encoder Representations from Transformers)
 reference: https://arxiv.org/pdf/1810.04805
@@ -53,7 +53,7 @@ Output: "IsNext The sky is blue. [SEP] It is a beautiful day. [SEP]"
 reference: https://cdn.openai.com/research-covers/language-unsupervised/language_understanding_paper.pdf
 
 
-Based on **NLG trick**. Use text generation to pretrain the model and use text generation to reform other NLP tasks.
+Based on **Natural Language Generation(NLG) trick**. Use text generation to pretrain the model and use text generation to reform other NLP tasks.
 
 ```bash
 
@@ -61,7 +61,7 @@ Based on **NLG trick**. Use text generation to pretrain the model and use text g
 "The movie was fantastic!" => "Positive" 
 # Reform to :
 Input:  "The movie was fantastic! Sentiment: "
-Output: "movie was fantastic! Sentiment: Positive"
+Output: "The movie was fantastic! Sentiment: Positive"
 
 ```
 
@@ -71,7 +71,7 @@ Output: "movie was fantastic! Sentiment: Positive"
 
 ### Chatbot
 
-How is ChatGPT built: `how_to_build_chatGPT.md`.
+How is ChatGPT built: `chatGPT.md`.
 
 ### Prompt engineering
 

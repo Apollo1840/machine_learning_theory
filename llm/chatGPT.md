@@ -39,7 +39,9 @@ There are three steps to build chatGPT:
 After the finetuning, the LLM already knows how to **follow human instructions**, ie. act like a chatBot.
 
 ## RLHF (Reinforcement Learning from Human Feedback)
-It is the 3rd step where a Reward Model(RM) is trained and it is used to further finetune the SFT through Proximal Policy Optimization (PPO).
+It is the 3rd step where 
+- a Reward Model(RM) is trained 
+- and the RM  is used to further finetune the SFT through Proximal Policy Optimization (PPO).
 
 ### How to train a RM
 
@@ -68,7 +70,7 @@ $$
 
 refer `rl/PPO.md` for the introduction of PPO.
 
-PPO can be regarded as a simple variation of Policy Gradient (PG). In PG, we need know current reward of the state $r_t$ after $a_t$,
+PPO can be regarded as a simple variation of Policy Gradient (PG). In PG, we need know current reward of the state $r_t$ (after $a_t$),
 and policy function $\pi_{\theta}(a_t \| s_t)$, they are replaced by RM and Language model:
 
 | In PG | In ChatGPT |
@@ -76,5 +78,8 @@ and policy function $\pi_{\theta}(a_t \| s_t)$, they are replaced by RM and Lang
 | $r_t$  | $RM(s_t, a_t)$  |
 | $\pi_{\theta}(a_t \| s_t)$ | $\prod_{i=1}^n P_\theta(w_i \mid w_{<i}, s_t)$ |
 
-Note that, the $V_{\phi}(s)$ is finetuned from the SFT drived from previous steps.
+Note that, 
+- $s_t$ is the prompt, $a_t$ is the response.
+- $P_\theta$ is exactly the LLM we want.
+- $V_{\phi}(s)$ is finetuned from the SFT drived from previous steps.
 
