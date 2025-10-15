@@ -30,6 +30,10 @@ Hence we use it solve modern Doc2Doc Problem (or modern NLP Problem) such as:
 | BERT | Encoder-Only |x | |
 | GPT | Decoder-Only |  | x|
 
+Decoder-only is actually a Encoder architecture, but used causual mask to let model predict next token based on previous tokens. 
+
+**Causual mask** is not only a traing trick but also is embedded in the nature of Decoder-only architecture. So embedding of each token is only determined by itself and its previous tokens. (Foundation of KV-cache)
+
 ### BERT (Bidirectional Encoder Representations from Transformers)
 reference: https://arxiv.org/pdf/1810.04805
 

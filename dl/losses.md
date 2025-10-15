@@ -201,6 +201,12 @@ The combination of final-layer activation (Linear for MSE, Sigmoid/Softmax for C
    - For Binary Cross-Entropy with Sigmoid: $\frac{\partial J}{\partial z} = \hat{y} - y$ (simple, non-vanishing gradient)
    - Using MSE with Sigmoid would include $\hat{y}(1-\hat{y})$ in the gradient, which can vanish when the neuron is saturated.
 
+## Practice
+
+In real cases, loss curve can be unstable. Mostly because gradient exploding. Typical solutions are:
+- Gradient clip
+- LR warmup
+
 
 
 

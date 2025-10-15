@@ -9,7 +9,12 @@ NAS with combined target. for NAS, see `NAS.md` for details.
 - Parameter sharing & weights clustering
 
 ## Calculation optimization
-- Quantization & Mixed Precision
+- Mixed Precision & Quantization
+  
+**Mixed Precision**: In training, we keep FP32 weights in memory, when calculate gradient and updates we use FP16. After the update, we store FP32 checkpoints for next train step (batch). 
+
+**Quantization**: We use FP16 or even FP8 model in inference. 
+
 
 
 ## Focus on Transformer

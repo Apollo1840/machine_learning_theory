@@ -70,6 +70,10 @@ it will be $(y - \hat{y})(1 - \hat{y})\hat{y}$, gradient will be very small clos
 - sensitive to noise -> Oscillation
 - slow on flat area.
 
+**Learning rate**: step length along the gradient direction. 
+
+**batch size**: sampling size of the data points to enable mini-batch SGD.
+
 ### Adam
 When using Adam, we will keep the:
 - u: momentum of the **gradient** and 
@@ -77,10 +81,14 @@ When using Adam, we will keep the:
 
 Instead of using the gradient, Adam used u and the u is scaled by the square root of v.
 
-### AdamW
-In SGD, weight decay is essential equal to L2 regulariation.
+In Adam, learning rate is more like maximum of step length. actual 'learning rate' is adaptive to the variance of the gradient. 
 
-AdamW decoupled the weight decay, lets have some regulariation effect (without actually have L2 penalty term) and be stable at the same time. 
+
+### AdamW
+
+**Weight decay**: when update the parameters, also minus a scaled value of the parameter. In SGD, weight decay is essential equal to L2 regulariation.
+
+AdamW implements decoupled weight decay. This provides the desired regularization effect of L2 without interfering with Adam's adaptive learning rate mechanism, leading to better performance.
 
 ### Training
 #### reference
@@ -100,17 +108,17 @@ to the former layer, and this is so called back-propagation.
 
 Since we have a long chain of multiplication if the NN is deep. So problems like gradinet vanish/exploding might happen:
 
-- Vanishing gradient (gradient values are too small, and the related neuros fail to learn and update) 
+- **Vanishing gradient** (gradient values are too small, and the related neuros fail to learn and update) 
   
-  Cause: Too long backpropagation chains and bad initialization. And it also often caused by tanh saturation.
+  Cause: It can be derived that the gradient is positive relate to weights. So bad initialization can cause earlier layers have zero gradient because of the too long backpropagation chain. (Same for exploding gradient). And it also can be caused by activation saturation like tanh.
 
-- Exploding gradient (gradient values are too big and the training process become unstable)
+- **Exploding gradient** (gradient values are too big and the training process become unstable)
   
-  Cause: Too long backpropagation chains and bad initialization. And it often happen with loss like MSE, when gradient positive related to weights, and it often caused by too large learning rate.
+  Cause: As above. And losses like MSE make gradient positive to the discrepancy, so it can make the situation worse in the starting point.
 
 to avoid them, we can use:
 - gradient clip.
-- proper weight initialization and activation.
+- proper weight initialization and activation, like Xavier.
 - skip connection.
 - batch normalization (to prevent too-high or too-low activation, resulting in too-high or too-low last term of the formula).
 
@@ -118,6 +126,20 @@ to avoid them, we can use:
 An important insight is that:
 - Gradient are outter product of input and discrepancy. 
 
+
+## Weight initialization
+
+### Xavier
+
+$$
+W \sim U\left[-\frac{\sqrt{6}}{\sqrt{n_{in} + n_{out}}}, \frac{\sqrt{6}}{\sqrt{n_{in} + n_{out}}}\right]
+$$
+
+or
+
+$$
+W \sim \mathcal{N}\left(0, \sqrt{\frac{2}{n_{in} + n_{out}}}\right)
+$$
 
 ## Advances
 
