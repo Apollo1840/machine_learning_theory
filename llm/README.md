@@ -68,7 +68,15 @@ Input:  "The movie was fantastic! Sentiment: "
 Output: "The movie was fantastic! Sentiment: Positive"
 
 ```
+## Theory behind LLM
 
+### Emergent Properties
+
+About Emergent Properties, there are two aspect:
+- As to the **training process**, model reaches its bottleneck on training set performance but increased its generalizaiton ablity "suddenly".
+- As to the **model capacity**, large model gains significant abilities which small models can not have. Or in a more dynamic way, some complex model functionality get suddenly improved from unable to capable respect to increasing of model capacity.
+
+see `emergent_properties.md` for details.
 
 
 ## Tech based on LLM
