@@ -8,6 +8,8 @@ Focus on output level, do soft-voting, hard-voting, confidence-based voting of t
 Ensemble in a deeper level. It normally means averaging weights of mono-morphic models.
 
 ## Mix of experts (MoE)
+- reference: https://cvpr.thecvf.com/virtual/2025/invited-talk/35403
+
 Features from sub-models of different architecture will get aggregated via attention scores. 
 
 Normally we do hard combination of top-K features instead of soft combination overall (To save computation power). 

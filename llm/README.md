@@ -70,6 +70,28 @@ Output: "The movie was fantastic! Sentiment: Positive"
 ```
 ## Theory behind LLM
 
+### Scaling law
+
+| Year | Model Name / Version | Number of Parameters | Training Tokens |
+| :--- | :--- | :--- | :--- |
+| 2020 | GPT-3 (OpenAI) | 175B | 500B |
+| 2023 | **Llama 2** (Meta) | 7B, 13B, 70B | 2T |
+| 2023 | GPT-4 (OpenAI) | ~1.76T (Est. MoE) | N/A (Est. ~13T) |
+| 2023 | Deepseek Coder (V1) | 1.3B, 6.7B, 33B | 2T |
+| 2024 | **Llama 3.x** (Meta) | 1B, 3B (Text),8B, 70B, 405B  | 15T |
+| 2024 | Qwen 2 (Alibaba) | 0.5B, 1.5B, 7B, 57B (MoE), 72B | 3T+ |
+| 2025 | **Llama 4** (Meta) | Scout (109B), Maverick (400B) | N/A |
+| 2025 | Deepseek V3 | 671B (MoE, 37B,  active) | > 4T |
+
+Modern(2025) LLM normally has a context window of 128K, Llama4 has 1~10M.
+
+### Context window
+- Theoretical Possibility: It's theoretically possible to greatly extend the context window using improved PE design.
+
+- Main Limitation: A model's useful context window is a balance between what it learned from its **training data**, and what is affordable given **hardware costs**, considering the optimize attention mechanism rather than native $O(n^{2})$ MHA .
+
+- The Problem with Evaluation: There's no standard way to measure this capability. The large context numbers advertised by companies are more like a statement of potential or a system specification, not a guarantee of consistent performance on all long-text tasks.
+
 ### Emergent Properties
 
 About Emergent Properties, there are two aspect:
@@ -86,6 +108,8 @@ see `emergent_properties.md` for details.
 How is ChatGPT built: `chatGPT.md`.
 
 ### Prompt engineering
+
+See `prompt_engineering.md`
 
 ### RAG
 refer to `RAG.md`.

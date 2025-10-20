@@ -9,8 +9,8 @@ Model reaches its bottleneck on training set performance but increased its gener
 
 Three mechanistic Understanding:
 
-- Continuing regulization
-- Double Descent (https://arxiv.org/pdf/1912.02292). 
+- Continuing regulization (Explicit and Implicit) leads to benign overfitting.
+- Double Descent (https://arxiv.org/pdf/1912.02292).
 - Competing circuits
 
 
